@@ -1,0 +1,80 @@
+$primaryColor:#19191B;
+$secondaryColor:#FA1212;
+$tertiaryColor: #343438;
+
+:root{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+// auth 
+.bg-auth{
+    position: absolute;
+    background: url('../img/bg-auth.png');
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-auth{
+    background-color: $primaryColor!important;
+    color: white;
+
+    .title{
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .divider{
+        background-color: $secondaryColor;
+        width: 40%;
+        height: 4px;
+        border-radius: 1rem;
+    }
+
+    .btn-auth{
+        background-color: $secondaryColor;
+        color: white;
+        border-radius: 1.5rem;
+    }
+
+    .btn-google{
+        background-color: white;
+        color: $primaryColor;
+        border-radius: 1.5rem;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .btn-link{
+            color: $secondaryColor;
+            text-decoration: none;
+        }
+    }
+}
+// end auth 
+
+// input 
+.input-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    .form-control{
+        background-color: $tertiaryColor;
+        border: none;
+    }
+
+    i{
+        font-size: 1.2rem;
+    }
+}
+// end input 

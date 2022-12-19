@@ -1,0 +1,64 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-auth {
+  position: absolute;
+  background: url("../img/bg-auth.png");
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-auth {
+  background-color: #19191B !important;
+  color: white;
+}
+.card-auth .title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.card-auth .divider {
+  background-color: #FA1212;
+  width: 40%;
+  height: 4px;
+  border-radius: 1rem;
+}
+.card-auth .btn-auth {
+  background-color: #FA1212;
+  color: white;
+  border-radius: 1.5rem;
+}
+.card-auth .btn-google {
+  background-color: white;
+  color: #19191B;
+  border-radius: 1.5rem;
+}
+.card-auth .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.card-auth .footer .btn-link {
+  color: #FA1212;
+  text-decoration: none;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.input-container .form-control {
+  background-color: #343438;
+  border: none;
+}
+.input-container i {
+  font-size: 1.2rem;
+}/*# sourceMappingURL=style.css.map */
