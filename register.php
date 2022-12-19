@@ -26,6 +26,12 @@
                     <div class="row mt-3">
                         <div class="col-12 mt-5">
                             <div class="input-container">
+                                <i class="fa fa-user icon"></i>
+                                <input class="form-control" type="text" placeholder="Nama" name="email">
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="input-container">
                                 <i class="fa fa-envelope icon"></i>
                                 <input class="form-control" type="text" placeholder="Email" name="email">
                             </div>
@@ -36,16 +42,19 @@
                                 <input class="form-control" type="text" placeholder="Password" name="email">
                             </div>
                         </div>
+                        <div class="col-12 mt-3">
+                            <div class="input-container">
+                                <i class="fa fa-lock icon"></i>
+                                <input class="form-control" type="text" placeholder="Ulangi Password" name="email">
+                            </div>
+                        </div>
                     </div>
                     <div class="row mt-5">
                         <div class="d-grid gap-2">
-                            <button class="btn btn-auth" type="button">Masuk</button>
+                            <button class="btn btn-auth" type="button">Daftar</button>
                         </div>
-                        <div class="d-grid gap-2 mt-2">
-                            <button class="btn btn-google" type="button"><i class="fa-brands fa-google me-2"></i> Continue With Google</button>
-                        </div> 
                         <div class="col-12 footer mt-5">
-                            <p>belum punya akun ? <a href="./register.php" class="btn-link">Daftar</a></p>
+                            <p>sudah punya akun ? <a href="./login.php" class="btn-link">Masuk</a></p>
                         </div>
                     </div>
                 </div>

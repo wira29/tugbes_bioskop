@@ -24,6 +24,15 @@ $tertiaryColor: #343438;
     background-color: $primaryColor!important;
     color: white;
 
+    .form-control{
+        color: white;
+    }
+
+    .form-control:hover, .form-control:focus{
+        background-color: $tertiaryColor;
+        color: white;
+    }
+
     .title{
         font-weight: bold;
         font-size: 1.5rem;

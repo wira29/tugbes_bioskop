@@ -19,6 +19,13 @@
   background-color: #19191B !important;
   color: white;
 }
+.card-auth .form-control {
+  color: white;
+}
+.card-auth .form-control:hover, .card-auth .form-control:focus {
+  background-color: #343438;
+  color: white;
+}
 .card-auth .title {
   font-weight: bold;
   font-size: 1.5rem;
