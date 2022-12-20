@@ -183,6 +183,13 @@
   color: white;
 }
 
+.card-transaksi {
+  background-color: #343438 !important;
+}
+.card-transaksi .card-transaksi-item {
+  background-color: #19191B !important;
+}
+
 footer .menu {
   list-style: none;
   padding: 0;

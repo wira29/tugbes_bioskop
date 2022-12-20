@@ -232,6 +232,16 @@ $tertiaryColor: #343438;
 }
 // end page profile 
 
+// page transaksi 
+.card-transaksi{
+    background-color: $tertiaryColor!important;
+
+    .card-transaksi-item{
+        background-color: $primaryColor!important;
+    }
+}
+// end page transaksi 
+
 footer {
     .menu{
         list-style: none;
