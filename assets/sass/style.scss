@@ -1,89 +1,115 @@
-$primaryColor:#19191B;
-$secondaryColor:#FA1212;
+$primaryColor: #19191b;
+$secondaryColor: #fa1212;
 $tertiaryColor: #343438;
 
-:root{
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
+:root {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-// auth 
-.bg-auth{
-    position: absolute;
-    background: url('../img/bg-auth.png');
-    width: 100vw;
-    height: 100vh;
+// Override
+.override {
+  .bg-theme-primary {
+    background-color: $primaryColor;
+  }
+  .bg-theme-secondary {
+    background-color: $secondaryColor;
+  }
+  .bg-theme-tertiary {
+    background-color: $tertiaryColor;
+  }
+  .text-theme-primary {
+    color: #19191b;
+  }
+}
+// auth
+.bg-auth {
+  position: absolute;
+  background: url('../img/bg-auth.png');
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-auth {
+  background-color: $primaryColor !important;
+  color: white;
+
+  .form-control {
+    color: white;
+  }
+
+  .form-control:hover,
+  .form-control:focus {
+    background-color: $tertiaryColor;
+    color: white;
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .divider {
+    background-color: $secondaryColor;
+    width: 40%;
+    height: 4px;
+    border-radius: 1rem;
+  }
+
+  .btn-auth {
+    background-color: $secondaryColor;
+    color: white;
+    border-radius: 1.5rem;
+  }
+
+  .btn-google {
+    background-color: white;
+    color: $primaryColor;
+    border-radius: 1.5rem;
+  }
+
+  .footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+
+    .btn-link {
+      color: $secondaryColor;
+      text-decoration: none;
+    }
+  }
 }
+// end auth
 
-.card-auth{
-    background-color: $primaryColor!important;
-    color: white;
+// input
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 
-    .form-control{
-        color: white;
-    }
+  .form-control {
+    background-color: $tertiaryColor;
+    border: none;
+  }
 
-    .form-control:hover, .form-control:focus{
-        background-color: $tertiaryColor;
-        color: white;
-    }
-
-    .title{
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
-
-    .divider{
-        background-color: $secondaryColor;
-        width: 40%;
-        height: 4px;
-        border-radius: 1rem;
-    }
-
-    .btn-auth{
-        background-color: $secondaryColor;
-        color: white;
-        border-radius: 1.5rem;
-    }
-
-    .btn-google{
-        background-color: white;
-        color: $primaryColor;
-        border-radius: 1.5rem;
-    }
-
-    .footer{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
-        .btn-link{
-            color: $secondaryColor;
-            text-decoration: none;
-        }
-    }
+  i {
+    font-size: 1.2rem;
+  }
 }
-// end auth 
+// end input
 
-// input 
-.input-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-
-    .form-control{
-        background-color: $tertiaryColor;
-        border: none;
-    }
-
-    i{
-        font-size: 1.2rem;
-    }
+// admin
+.link-active {
+  background-color: $secondaryColor !important;
+  color: white !important;
 }
-// end input 
+.nav-link:hover {
+  background-color: $secondaryColor;
+  transition: all 0.5s;
+}
