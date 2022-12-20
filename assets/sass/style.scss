@@ -209,6 +209,29 @@ $tertiaryColor: #343438;
 }
 // end pagination 
 
+// page profile 
+.container-menu{
+    border-radius: 1rem;
+
+    ul{
+        list-style: none;
+        padding: 0;
+
+        li{
+            background-color: $primaryColor;
+            margin-bottom: 1rem;
+            padding: .5rem;
+            border-radius: .5rem;
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+// end page profile 
+
 footer {
     .menu{
         list-style: none;

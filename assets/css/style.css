@@ -165,6 +165,24 @@
   background-color: #FA1212 !important;
 }
 
+.container-menu {
+  border-radius: 1rem;
+}
+.container-menu ul {
+  list-style: none;
+  padding: 0;
+}
+.container-menu ul li {
+  background-color: #19191B;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.container-menu ul li a {
+  text-decoration: none;
+  color: white;
+}
+
 footer .menu {
   list-style: none;
   padding: 0;
