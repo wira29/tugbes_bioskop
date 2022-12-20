@@ -177,7 +177,37 @@ $tertiaryColor: #343438;
         font-size: 1.2rem;
     }
 }
+
+.form-control, .form-control:focus{
+    background-color: $tertiaryColor!important;
+    border: none!important;
+    color: white!important;
+}
 // end input 
+
+// button 
+.btn-primary{
+    background-color: $secondaryColor!important;
+    border: none!important;
+}
+// end button 
+
+// pagination 
+.pagination{
+    .page-item{
+        margin: .5rem;
+    }
+    .page-link{
+        border-radius: .5rem;
+        border: none;
+        background-color: $tertiaryColor!important;
+        color: white!important;
+    }
+    .page-link.active{
+        background-color: $secondaryColor!important;
+    }
+}
+// end pagination 
 
 footer {
     .menu{

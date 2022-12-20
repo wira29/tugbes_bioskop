@@ -141,6 +141,30 @@
   font-size: 1.2rem;
 }
 
+.form-control, .form-control:focus {
+  background-color: #343438 !important;
+  border: none !important;
+  color: white !important;
+}
+
+.btn-primary {
+  background-color: #FA1212 !important;
+  border: none !important;
+}
+
+.pagination .page-item {
+  margin: 0.5rem;
+}
+.pagination .page-link {
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #343438 !important;
+  color: white !important;
+}
+.pagination .page-link.active {
+  background-color: #FA1212 !important;
+}
+
 footer .menu {
   list-style: none;
   padding: 0;
