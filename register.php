@@ -20,8 +20,8 @@
         <div class="col-4">
             <div class="card card-auth">
                 <div class="card-body p-5">
-                    <h1 class="title">Selamat Datang</h1>
-                    <p>silahkan masuk ke dalam akun anda</p>
+                    <h1 class="title">Daftar</h1>
+                    <p>silakan masukkan data diri anda dengan benar</p>
                     <div class="divider"></div>
                     <div class="row mt-3">
                         <div class="col-12 mt-5">

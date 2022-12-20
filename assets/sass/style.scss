@@ -2,11 +2,66 @@ $primaryColor:#19191B;
 $secondaryColor:#FA1212;
 $tertiaryColor: #343438;
 
-:root{
+*{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    color: white;
 }
+
+.bg{
+    background-color: $primaryColor;
+}
+
+// navbar
+.navbar{
+    background-color: $primaryColor;
+    a{
+        color: white;
+    }
+    a.active {
+        color: $secondaryColor!important;
+        font-weight: bold;
+    }
+    .btn-login{
+        background-color: $secondaryColor;
+        border: none;
+    }
+    .btn-login:hover{
+        background-color: $secondaryColor;
+        border: none;
+    }
+}
+// end navbar
+
+// film 
+.card-film{
+    height: 334px;
+
+    .card{
+        height: inherit;
+        background-image: url('../img/gatot-kaca.png');
+        background-size: cover;
+        border-radius: 1rem;
+
+        .card-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+        }
+    }
+}
+// end film 
+
+// sub title 
+
+.sub-title{
+    border-bottom: 3px solid $secondaryColor;
+    width: fit-content;
+    padding-bottom: .5rem;
+}
+
+// end subtitle 
 
 // auth 
 .bg-auth{
@@ -70,6 +125,42 @@ $tertiaryColor: #343438;
 }
 // end auth 
 
+// home 
+.jumbotron{
+    background-image: url('../img/jumbotron.png');
+    color: white;
+    background-size: cover;
+}
+
+.accordion {
+    
+
+    .accordion-item{
+        .accordion-button{
+            background-color: $tertiaryColor;
+            color: white;
+        }
+
+        .accordion-body{
+            background-color: $tertiaryColor;
+        }
+    }
+}
+
+ .send-question{
+    .form-control, .form-control:focus{
+        background-color: $tertiaryColor;
+        border: none;
+        color: white;
+    }
+
+    .btn-send{
+        background-color: $secondaryColor;
+        color: white;
+    }
+ }
+// end home 
+
 // input 
 .input-container{
     display: flex;
@@ -87,3 +178,15 @@ $tertiaryColor: #343438;
     }
 }
 // end input 
+
+footer {
+    .menu{
+        list-style: none;
+        padding: 0;
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}

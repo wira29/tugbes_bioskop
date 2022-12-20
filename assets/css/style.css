@@ -1,7 +1,54 @@
-:root {
+* {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
+  color: white;
+}
+
+.bg {
+  background-color: #19191B;
+}
+
+.navbar {
+  background-color: #19191B;
+}
+.navbar a {
+  color: white;
+}
+.navbar a.active {
+  color: #FA1212 !important;
+  font-weight: bold;
+}
+.navbar .btn-login {
+  background-color: #FA1212;
+  border: none;
+}
+.navbar .btn-login:hover {
+  background-color: #FA1212;
+  border: none;
+}
+
+.card-film {
+  height: 334px;
+}
+.card-film .card {
+  height: inherit;
+  background-image: url("../img/gatot-kaca.png");
+  background-size: cover;
+  border-radius: 1rem;
+}
+.card-film .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.sub-title {
+  border-bottom: 3px solid #FA1212;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 0.5rem;
 }
 
 .bg-auth {
@@ -56,6 +103,30 @@
   text-decoration: none;
 }
 
+.jumbotron {
+  background-image: url("../img/jumbotron.png");
+  color: white;
+  background-size: cover;
+}
+
+.accordion .accordion-item .accordion-button {
+  background-color: #343438;
+  color: white;
+}
+.accordion .accordion-item .accordion-body {
+  background-color: #343438;
+}
+
+.send-question .form-control, .send-question .form-control:focus {
+  background-color: #343438;
+  border: none;
+  color: white;
+}
+.send-question .btn-send {
+  background-color: #FA1212;
+  color: white;
+}
+
 .input-container {
   display: flex;
   flex-direction: row;
@@ -68,4 +139,13 @@
 }
 .input-container i {
   font-size: 1.2rem;
+}
+
+footer .menu {
+  list-style: none;
+  padding: 0;
+}
+footer .menu a {
+  text-decoration: none;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
