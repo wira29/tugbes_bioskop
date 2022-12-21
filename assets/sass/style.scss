@@ -242,6 +242,17 @@ $tertiaryColor: #343438;
 }
 // end page transaksi 
 
+// page checkout 
+.navigation{
+    background-color: #000 !important;
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
+// end page checkout 
+
 footer {
     .menu{
         list-style: none;

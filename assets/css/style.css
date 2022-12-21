@@ -190,6 +190,14 @@
   background-color: #19191B !important;
 }
 
+.navigation {
+  background-color: #000 !important;
+}
+.navigation a {
+  text-decoration: none;
+  color: white;
+}
+
 footer .menu {
   list-style: none;
   padding: 0;
