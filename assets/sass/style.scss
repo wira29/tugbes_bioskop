@@ -8,21 +8,6 @@ $tertiaryColor: #343438;
   padding: 0;
 }
 
-// Override
-.override {
-  .bg-theme-primary {
-    background-color: $primaryColor;
-  }
-  .bg-theme-secondary {
-    background-color: $secondaryColor;
-  }
-  .bg-theme-tertiary {
-    background-color: $tertiaryColor;
-  }
-  .text-theme-primary {
-    color: #19191b;
-  }
-}
 // auth
 .bg-auth {
   position: absolute;
@@ -74,248 +59,240 @@ $tertiaryColor: #343438;
   }
 
   .footer {
-*{
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: white;
-}
+    * {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
 
-.bg{
-    background-color: $primaryColor;
-}
+    .bg {
+      background-color: $primaryColor;
+    }
 
-// navbar
-.navbar{
-    background-color: $primaryColor;
-    a{
+    // navbar
+    .navbar {
+      background-color: $primaryColor;
+      a {
         color: white;
-    }
-    a.active {
-        color: $secondaryColor!important;
+      }
+      a.active {
+        color: $secondaryColor !important;
         font-weight: bold;
-    }
-    .btn-login{
+      }
+      .btn-login {
         background-color: $secondaryColor;
         border: none;
-    }
-    .btn-login:hover{
+      }
+      .btn-login:hover {
         background-color: $secondaryColor;
         border: none;
+      }
     }
-}
-// end navbar
+    // end navbar
 
-// film 
-.card-film{
-    height: 334px;
+    // film
+    .card-film {
+      height: 334px;
 
-    .card{
+      .card {
         height: inherit;
         background-image: url('../img/gatot-kaca.png');
         background-size: cover;
         border-radius: 1rem;
 
-        .card-body{
-            display: flex;
-            flex-direction: column;
-            justify-content: end;
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
         }
+      }
     }
-}
-// end film 
+    // end film
 
-// sub title 
+    // sub title
 
-.sub-title{
-    border-bottom: 3px solid $secondaryColor;
-    width: fit-content;
-    padding-bottom: .5rem;
-}
+    .sub-title {
+      border-bottom: 3px solid $secondaryColor;
+      width: fit-content;
+      padding-bottom: 0.5rem;
+    }
 
-// end subtitle 
+    // end subtitle
 
-// auth 
-.bg-auth{
-    position: absolute;
-    background: url('../img/bg-auth.png');
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    // auth
+    .bg-auth {
+      position: absolute;
+      background: url('../img/bg-auth.png');
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
 
-    .btn-link {
-      color: $secondaryColor;
-      text-decoration: none;
+      .btn-link {
+        color: $secondaryColor;
+        text-decoration: none;
+      }
     }
   }
-}
-// end auth
+  // end auth
 
-// input
-.input-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-
-  .form-control {
-    background-color: $tertiaryColor;
-    border: none;
-  }
-
-  i {
-    font-size: 1.2rem;
-  }
-}
-// end input
-
-// admin
-.link-active {
-  background-color: $secondaryColor !important;
-  color: white !important;
-}
-.nav-link:hover {
-  background-color: $secondaryColor;
-  transition: all 0.5s;
-}
-// home 
-.jumbotron{
-    background-image: url('../img/jumbotron.png');
-    color: white;
-    background-size: cover;
-}
-
-.accordion {
-    
-
-    .accordion-item{
-        .accordion-button{
-            background-color: $tertiaryColor;
-            color: white;
-        }
-
-        .accordion-body{
-            background-color: $tertiaryColor;
-        }
-    }
-}
-
- .send-question{
-    .form-control, .form-control:focus{
-        background-color: $tertiaryColor;
-        border: none;
-        color: white;
-    }
-
-    .btn-send{
-        background-color: $secondaryColor;
-        color: white;
-    }
- }
-// end home 
-
-// input 
-.input-container{
+  // input
+  .input-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
 
-    .form-control{
+    .form-control {
+      background-color: $tertiaryColor;
+      border: none;
+    }
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+  // end input
+
+  // home
+  .jumbotron {
+    background-image: url('../img/jumbotron.png');
+    color: white;
+    background-size: cover;
+  }
+
+  .accordion {
+    .accordion-item {
+      .accordion-button {
         background-color: $tertiaryColor;
-        border: none;
+        color: white;
+      }
+
+      .accordion-body {
+        background-color: $tertiaryColor;
+      }
+    }
+  }
+
+  .send-question {
+    .form-control,
+    .form-control:focus {
+      background-color: $tertiaryColor;
+      border: none;
+      color: white;
     }
 
-    i{
-        font-size: 1.2rem;
+    .btn-send {
+      background-color: $secondaryColor;
+      color: white;
     }
-}
+  }
+  // end home
 
-.form-control, .form-control:focus{
-    background-color: $tertiaryColor!important;
-    border: none!important;
-    color: white!important;
-}
-// end input 
+  // input
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 
-// button 
-.btn-primary{
-    background-color: $secondaryColor!important;
-    border: none!important;
-}
-// end button 
-
-// pagination 
-.pagination{
-    .page-item{
-        margin: .5rem;
+    .form-control {
+      background-color: $tertiaryColor;
+      border: none;
     }
-    .page-link{
-        border-radius: .5rem;
-        border: none;
-        background-color: $tertiaryColor!important;
-        color: white!important;
-    }
-    .page-link.active{
-        background-color: $secondaryColor!important;
-    }
-}
-// end pagination 
 
-// page profile 
-.container-menu{
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  .form-control,
+  .form-control:focus {
+    background-color: $tertiaryColor !important;
+    border: none !important;
+    color: white !important;
+  }
+  // end input
+
+  // button
+  .btn-primary {
+    background-color: $secondaryColor !important;
+    border: none !important;
+  }
+  // end button
+
+  // pagination
+  .pagination {
+    .page-item {
+      margin: 0.5rem;
+    }
+    .page-link {
+      border-radius: 0.5rem;
+      border: none;
+      background-color: $tertiaryColor !important;
+      color: white !important;
+    }
+    .page-link.active {
+      background-color: $secondaryColor !important;
+    }
+  }
+  // end pagination
+
+  // page profile
+  .container-menu {
     border-radius: 1rem;
 
-    ul{
-        list-style: none;
-        padding: 0;
+    ul {
+      list-style: none;
+      padding: 0;
 
-        li{
-            background-color: $primaryColor;
-            margin-bottom: 1rem;
-            padding: .5rem;
-            border-radius: .5rem;
+      li {
+        background-color: $primaryColor;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
 
-            a{
-                text-decoration: none;
-                color: white;
-            }
+        a {
+          text-decoration: none;
+          color: white;
         }
+      }
     }
-}
-// end page profile 
+  }
+  // end page profile
 
-// page transaksi 
-.card-transaksi{
-    background-color: $tertiaryColor!important;
+  // page transaksi
+  .card-transaksi {
+    background-color: $tertiaryColor !important;
 
-    .card-transaksi-item{
-        background-color: $primaryColor!important;
+    .card-transaksi-item {
+      background-color: $primaryColor !important;
     }
-}
-// end page transaksi 
+  }
+  // end page transaksi
 
-// page checkout 
-.navigation{
+  // page checkout
+  .navigation {
     background-color: #000 !important;
 
-    a{
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  // end page checkout
+
+  footer {
+    .menu {
+      list-style: none;
+      padding: 0;
+
+      a {
         text-decoration: none;
         color: white;
+      }
     }
-}
-// end page checkout 
-
-footer {
-    .menu{
-        list-style: none;
-        padding: 0;
-
-        a{
-            text-decoration: none;
-            color: white;
-        }
-    }
+  }
 }

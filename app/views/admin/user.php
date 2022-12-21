@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
@@ -42,21 +42,48 @@
           <h2>Dashboard z</h2>
         </header>
         <article class="container">
-          <table id="user-table" class="display table table-striped w-10">
+          <table id="user-table" class="display table w-10">
+            <thead>
+              <tr>
+                <th>name</th>
+                <th>phone</th>
+                <th>email</th>
+                <th>address</th>
+              </tr>
+            </thead>
+
           </table>
-          <?php
-          foreach ($data as $row) {
-            echo $row['name'] . "\n";
-          }
-          ?>
+
         </article>
       </main>
     </div>
   </div>
   <script>
     $(document).ready(function() {
-      $('#example').DataTable();
-    });
+      // $('#user-table').DataTable();
+      $('#user-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+          url: "/admin/user/getall", // json
+          type: "POST", // type of method
+        },
+        columns: [{
+            "data": "name"
+          },
+          {
+            "data": "email"
+          },
+          {
+            "data": "phone"
+          },
+          {
+            "data": "address"
+          },
+
+        ]
+      })
+    })
   </script>
 </body>
 

@@ -12,6 +12,10 @@ class App
 
   public function __construct()
   {
+    $this->routing();
+  }
+  private function routing()
+  {
     $routes = Route::getRoutes();
 
     $requestUri = $_SERVER['REQUEST_URI'];
@@ -20,8 +24,6 @@ class App
     foreach ($routes as  $route => $callback) {
       list($method, $uri) = explode('@', $route);
       $pattern = "@^" . preg_replace('/\\\:[a-zA-Z0-9\_\-]+/', '([a-zA-Z0-9\-\_]+)', preg_quote($uri)) . "$@D";
-      $params = array();
-
       if ($requestMethod == $method && preg_match($pattern, $requestUri, $params)) {
         list($controller, $action) = explode('@', $callback);
         array_shift($params);

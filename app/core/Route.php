@@ -7,6 +7,8 @@ class Route
     'GET@/register' => 'UserController@index',
     'GET@/admin/user' => 'AdminUserController@index',
     'GET@/admin/user/:id' => 'AdminUserController@show',
+    'GET@/admin/user/update/:id' => 'AdminUserController@update',
+    'POST@/admin/user/getall' => 'AdminUserController@getall'
     // 'GET@/admin/user/:id/posts/:post' => 'UserController@show',
   ];
 
