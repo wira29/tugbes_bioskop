@@ -51,6 +51,18 @@
   padding-bottom: 0.5rem;
 }
 
+.bg-theme-primary {
+  background-color: #19191b !important;
+}
+
+.bg-theme-secondary {
+  background-color: #fa1212 !important;
+}
+
+.bg-theme-tertiary {
+  background-color: #343438 !important;
+}
+
 .bg-auth {
   position: absolute;
   background: url("../img/bg-auth.png");
@@ -63,13 +75,14 @@
 }
 
 .card-auth {
-  background-color: #19191B !important;
+  background-color: #19191b !important;
   color: white;
 }
 .card-auth .form-control {
   color: white;
 }
-.card-auth .form-control:hover, .card-auth .form-control:focus {
+.card-auth .form-control:hover,
+.card-auth .form-control:focus {
   background-color: #343438;
   color: white;
 }
@@ -78,19 +91,19 @@
   font-size: 1.5rem;
 }
 .card-auth .divider {
-  background-color: #FA1212;
+  background-color: #fa1212;
   width: 40%;
   height: 4px;
   border-radius: 1rem;
 }
 .card-auth .btn-auth {
-  background-color: #FA1212;
+  background-color: #fa1212;
   color: white;
   border-radius: 1.5rem;
 }
 .card-auth .btn-google {
   background-color: white;
-  color: #19191B;
+  color: #19191b;
   border-radius: 1.5rem;
 }
 .card-auth .footer {
@@ -99,7 +112,7 @@
   justify-content: center;
 }
 .card-auth .footer .btn-link {
-  color: #FA1212;
+  color: #fa1212;
   text-decoration: none;
 }
 
