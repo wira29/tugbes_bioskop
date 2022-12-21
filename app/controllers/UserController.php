@@ -7,7 +7,7 @@ class UserController extends Controller
   {
     $uri = $_SERVER["REQUEST_URI"];
     if ($uri == '/' || $uri == '/login') {
-      $this->view('login');
+      $this->view('dashboard/login');
     } else if ($uri == '/register') {
       $this->view('register');
     }

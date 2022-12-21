@@ -4,7 +4,7 @@ class Koneksi
   private static $instance;
   private $pdo;
   private $username = "root";
-  private $password = "fakyu";
+  private $password = "";
   private $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -13,7 +13,7 @@ class Koneksi
 
   private function __construct()
   {
-    $this->pdo = new PDO('mysql:host=localhost;dbname=dummy', $this->username, $this->password, $this->options);
+    $this->pdo = new PDO('mysql:host=localhost;dbname=tugbes_web', $this->username, $this->password, $this->options);
   }
 
   public static function getInstance()

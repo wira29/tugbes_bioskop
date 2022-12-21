@@ -9,6 +9,13 @@ class UserModel
     $this->db = Koneksi::getInstance()->getPDO();
   }
 
+  public function getByEmail(string $email)
+  {
+    $query = "SELECT * from user WHERE email='$email'";
+    $result = $this->db->query($query);
+    return $result->fetchObject();
+  }
+
   public function getAll()
   {
     $query = "SELECT * FROM users";

@@ -33,31 +33,30 @@
           <h1 class="title">Selamat Datang</h1>
           <p>silahkan masuk ke dalam akun anda</p>
           <div class="divider"></div>
+          <form action="<?= $uriHelper->baseUrl('processLogin') ?>" method="POST">
           <div class="row mt-3">
             <div class="col-12 mt-5">
               <div class="input-container">
                 <i class="fa fa-envelope icon"></i>
-                <input class="form-control" type="text" placeholder="Email" name="email">
+                <input class="form-control" type="email" placeholder="Email" name="email">
               </div>
             </div>
             <div class="col-12 mt-3">
               <div class="input-container">
                 <i class="fa fa-lock icon"></i>
-                <input class="form-control" type="text" placeholder="Password" name="email">
+                <input class="form-control" type="password" placeholder="Password" name="password">
               </div>
             </div>
           </div>
           <div class="row mt-5">
             <div class="d-grid gap-2">
-              <button class="btn btn-auth" type="button">Masuk</button>
-            </div>
-            <div class="d-grid gap-2 mt-2">
-              <button class="btn btn-google" type="button"><i class="fa-brands fa-google me-2"></i> Continue With Google</button>
+              <button class="btn btn-auth" type="submit">Masuk</button>
             </div>
             <div class="col-12 footer mt-5">
               <p>belum punya akun ? <a href="/register" class="btn-link">Daftar</a></p>
             </div>
           </div>
+          </form>
         </div>
       </div>
     </div>
