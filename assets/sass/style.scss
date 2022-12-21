@@ -156,9 +156,17 @@ $tertiaryColor: #343438;
   }
   // end input
 
+  // admin
+  .link-active {
+    background-color: $secondaryColor !important;
+    color: white !important;
+  }
+  .nav-link:hover {
+    background-color: $secondaryColor;
+    transition: all 0.5s;
+  }
   // home
   .jumbotron {
-    background-image: url('../img/jumbotron.png');
     color: white;
     background-size: cover;
   }

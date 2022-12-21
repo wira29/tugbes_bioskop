@@ -1,3 +1,9 @@
+<?php
+  require_once __DIR__ . "/../../core/Helper.php";
+
+  $uriHelper = new Helper();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="<?= $uriHelper->baseUrl('assets/css/style.css') ?>">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -30,12 +36,6 @@
           <div class="row mt-3">
             <div class="col-12 mt-5">
               <div class="input-container">
-                <i class="fa fa-user icon"></i>
-                <input class="form-control" type="text" placeholder="Nama" name="email">
-              </div>
-            </div>
-            <div class="col-12 mt-3">
-              <div class="input-container">
                 <i class="fa fa-envelope icon"></i>
                 <input class="form-control" type="text" placeholder="Email" name="email">
               </div>
@@ -46,19 +46,16 @@
                 <input class="form-control" type="text" placeholder="Password" name="email">
               </div>
             </div>
-            <div class="col-12 mt-3">
-              <div class="input-container">
-                <i class="fa fa-lock icon"></i>
-                <input class="form-control" type="text" placeholder="Ulangi Password" name="email">
-              </div>
-            </div>
           </div>
           <div class="row mt-5">
             <div class="d-grid gap-2">
-              <button class="btn btn-auth" type="button">Daftar</button>
+              <button class="btn btn-auth" type="button">Masuk</button>
+            </div>
+            <div class="d-grid gap-2 mt-2">
+              <button class="btn btn-google" type="button"><i class="fa-brands fa-google me-2"></i> Continue With Google</button>
             </div>
             <div class="col-12 footer mt-5">
-              <p>sudah punya akun ? <a href="/admin/user" class="btn-link">Masuk</a></p>
+              <p>belum punya akun ? <a href="/register" class="btn-link">Daftar</a></p>
             </div>
           </div>
         </div>
