@@ -15,6 +15,10 @@ class App
 
   public function __construct()
   {
+    $this->routing();
+  }
+  private function routing()
+  {
     $routes = Route::getRoutes();
     $appname = Helper::getAppname();
 

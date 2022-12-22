@@ -8,10 +8,23 @@ class AdminUserController extends Controller
     $data = $this->model('UserModel')->getAll();
     $this->view('admin/user', $data);
   }
+  public function getAll()
+  {
+    $data = $this->model('UserModel')->fetchDatatable();
+
+    echo json_encode($data);
+  }
 
   public function show($id)
   {
     echo "hello";
+    var_dump($id);
+    // $data = $this->model('UserModel')->get($id);
+    // $this->view('admin/user', $data);
+  }
+  public function update($id)
+  {
+    echo "update";
     var_dump($id);
     // $data = $this->model('UserModel')->get($id);
     // $this->view('admin/user', $data);
