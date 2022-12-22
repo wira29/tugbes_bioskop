@@ -17,12 +17,15 @@
   color: #19191b;
 }
 
-.link-active {
-  background-color: #fa1212 !important;
+.nav-link {
+  background-color: #343438 !important;
   color: white !important;
 }
-
 .nav-link:hover {
-  background-color: #fa1212;
+  background-color: #fa1212 !important;
   transition: all 0.5s;
+}
+.nav-link.link-active {
+  background-color: #fa1212 !important;
+  color: white !important;
 }/*# sourceMappingURL=admin.css.map */

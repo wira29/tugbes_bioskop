@@ -24,11 +24,16 @@ $tertiaryColor: #343438;
   }
 }
 // admin
-.link-active {
-  background-color: $secondaryColor !important;
+
+.nav-link {
+  background-color: $tertiaryColor !important;
   color: white !important;
-}
-.nav-link:hover {
-  background-color: $secondaryColor;
-  transition: all 0.5s;
+  &:hover {
+    background-color: $secondaryColor !important;
+    transition: all 0.5s;
+  }
+  &.link-active {
+    background-color: $secondaryColor !important;
+    color: white !important;
+  }
 }
