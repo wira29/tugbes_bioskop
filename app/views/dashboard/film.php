@@ -24,115 +24,47 @@
     </div>
 
     <div class="col-md-9 col-sm-12">
-        <h4 class="sub-title">Film Terpopuler</h4>
+        <h4 class="sub-title">Daftar Film</h4>
 
         <div class="row film-container mt-5">
-            <div class="col-md-3 card-film mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
+            <?php foreach($data['films'] as $film){ ?>
+                <a href="" class="col-md-3 card-film mt-3">
+                    <div class="card" style="background-image: url('<?= $uriHelper->baseUrl("assets/img/film/". $film['poster']) ?>');">
+                        <div class="card-body">
+                            <h4><?= $film['judul'] ?></h4>
+                            <div class="row">
+                                <p><i class="fas fa-star me-2"></i> <?= $film['rating'] ?> IMDB</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </a>
+            <?php } ?>
         </div>
 
         <div class="row mt-5">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                    </li>
-                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                    </li>
+                    <?php if($data['page'] != 1){ ?>
+                        <li class="page-item">
+                            <a class="page-link" href="<?= $uriHelper->baseUrl('film?page=' . $data['page']-1) ?>" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    <?php } ?>
+                    <?php
+                        $i = 1;
+                        for($i; $i <= ceil($data['total'] / $data['limit']); $i++){
+                    ?>
+                        <li class="page-item"><a class="page-link <?= ($i == $data['page']) ? 'active' : '' ?>" href="<?= $uriHelper->baseUrl('film?page=' . $i) ?>"><?= $i ?></a></li>
+                    <?php } ?>
+                    <?php if($data['page'] != ceil($data['total'] / $data['limit'])){ ?>
+                        <li class="page-item">
+                            <a class="page-link" href="<?= $uriHelper->baseUrl('film?page=' . $data['page']+1) ?>" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    <?php } ?>
+                    
                 </ul>
             </nav>
         </div>

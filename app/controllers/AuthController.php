@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/../core/Helper.php';
 require_once __DIR__ . '/../models/UserModel.php';
 
 class AuthController extends Controller
