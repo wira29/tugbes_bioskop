@@ -22,13 +22,6 @@ class UserModel
     $this->db->exec($insert);
   }
 
-  public function updateProfile(array $data, int $id)
-  {
-    $update = "UPDATE user SET nama='$data[0]', email='$data[1]', no_telepon='$data[2]', foto='$data[3]' 
-    WHERE id='$id'";
-    $this->db->exec($update);
-  }
-
   public function getAll()
   {
     $query = "SELECT * FROM user";
