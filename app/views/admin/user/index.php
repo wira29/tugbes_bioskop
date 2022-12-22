@@ -32,13 +32,12 @@
   </div>
   <script>
     $(document).ready(function() {
-      // $('#user-table').DataTable();
       const table = $('#user-table').DataTable({
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/admin/user/getall", // json
-          type: "POST", // type of method
+          url: "/admin/user/getall",
+          type: "POST",
         },
         columnDefs: [{
             target: 0,

@@ -33,7 +33,7 @@ class AdminUserController extends Controller
     }
   }
 
-  public function edit($id)
+  public function edit(int $id)
   {
     $data = $this->model('UserModel')->getById($id);
     $this->view('admin/user/edit', $data);
@@ -47,7 +47,7 @@ class AdminUserController extends Controller
     // $this->view('admin/user', $data);
   }
 
-  public function update($id)
+  public function update(int $id)
   {
     $_POST['id'] = $id;
     if ($_FILES['foto']['size'] > 0) {
@@ -66,7 +66,7 @@ class AdminUserController extends Controller
     }
   }
 
-  public function destroy($id)
+  public function destroy(int $id)
   {
     $data = $this->model('UserModel')->getById($id);
 

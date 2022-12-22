@@ -29,21 +29,33 @@ class Route
     'POST@/processUpdateProfile' => 'ProfileController@update',
     // end profile 
 
-    
-    // 'GET@/admin/user' => 'AdminUserController@index',
-    // 'GET@/admin/user/:id' => 'AdminUserController@show',
-    // 'GET@/admin/user/update/:id' => 'AdminUserController@update',
-    // 'POST@/admin/user/getall' => 'AdminUserController@getall',
-
+    'GET@/admin' => 'HomeController@index',
     // Admin User
-    'GET@/admin/user' => 'UserController@index',
-    'GET@/admin/user/create' => 'UserController@create',
-    'POST@/admin/user' => 'UserController@store',
-    'GET@/admin/user/:id/edit' => 'UserController@edit',
-    'POST@/admin/user/:id/update' => 'UserController@update',
-    'POST@/admin/user/:id/delete' => 'UserController@destroy',
+    'GET@/admin/user' => 'AdminUserController@index',
+    'GET@/admin/user/create' => 'AdminUserController@create',
+    'POST@/admin/user' => 'AdminUserController@store',
+    'GET@/admin/user/:id/edit' => 'AdminUserController@edit',
+    'POST@/admin/user/:id/update' => 'AdminUserController@update',
+    'POST@/admin/user/:id/delete' => 'AdminUserController@destroy',
+    'POST@/admin/user/getall' => 'AdminUserController@getall', // fetch datatable
 
-    'POST@/admin/user/getall' => 'UserController@getall' // fetch datatable
+    // Admin Film
+    'GET@/admin/film' => 'AdminFilmController@index',
+    'GET@/admin/film/create' => 'AdminFilmController@create',
+    'POST@/admin/film' => 'AdminFilmController@store',
+    'GET@/admin/film/:id/edit' => 'AdminFilmController@edit',
+    'POST@/admin/film/:id/update' => 'AdminFilmController@update',
+    'POST@/admin/film/:id/delete' => 'AdminFilmController@destroy',
+    'POST@/admin/film/getall' => 'AdminFilmController@getall', // fetch datatable
+
+    // Admin Film
+    'GET@/admin/bioskop' => 'AdminBioskopController@index',
+    'GET@/admin/bioskop/create' => 'AdminBioskopController@create',
+    'POST@/admin/bioskop' => 'AdminBioskopController@store',
+    'GET@/admin/bioskop/:id/edit' => 'AdminBioskopController@edit',
+    'POST@/admin/bioskop/:id/update' => 'AdminBioskopController@update',
+    'POST@/admin/bioskop/:id/delete' => 'AdminBioskopController@destroy',
+    'POST@/admin/bioskop/getall' => 'AdminBioskopController@getall', // fetch datatable
     // 'GET@/admin/user/:id/posts/:post' => 'UserController@show',
   ];
 

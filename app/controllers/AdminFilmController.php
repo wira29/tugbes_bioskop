@@ -37,21 +37,13 @@ class AdminFilmController extends Controller
     }
   }
 
-  public function edit($id)
+  public function edit(int $id)
   {
     $data = $this->model('FilmModel')->getById($id);
     $this->view('admin/film/edit', $data);
   }
 
-  public function show($id)
-  {
-    echo "hello";
-    var_dump($id);
-    // $data = $this->model('FilmModel')->get($id);
-    // $this->view('admin/film', $data);
-  }
-
-  public function update($id)
+  public function update(int $id)
   {
     $_POST['id'] = $id;
     if ($_FILES['poster']['size'] > 0) {
@@ -77,7 +69,7 @@ class AdminFilmController extends Controller
     }
   }
 
-  public function destroy($id)
+  public function destroy(int $id)
   {
     $data = $this->model('FilmModel')->getById($id);
     if ($data->poster) {

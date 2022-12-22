@@ -99,7 +99,7 @@ class FilmModel
     if ($search == "") {
       $totalRecords =  $this->db->query("SELECT * FROM film");
     } else {
-      $totalRecords = "SELECT * FROM film WHERE name LIKE :keyword";
+      $totalRecords = "SELECT * FROM film WHERE judul LIKE :keyword";
       $totalRecords  = $this->db->prepare($totalRecords);
       $totalRecords->bindValue(':keyword', '%' . $search . '%', PDO::PARAM_STR);
     }

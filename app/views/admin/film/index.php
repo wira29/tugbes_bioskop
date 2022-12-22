@@ -31,13 +31,12 @@
   </div>
   <script>
     $(document).ready(function() {
-      // $('#film-table').DataTable();
       const table = $('#film-table').DataTable({
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/admin/film/getall", // json
-          type: "POST", // type of method
+          url: "/admin/film/getall",
+          type: "POST",
         },
         columnDefs: [{
             target: 0,
