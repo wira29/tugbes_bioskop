@@ -1,77 +1,24 @@
-* {
+:root {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  color: white;
 }
 
-.bg {
-  background-color: #19191B;
+body {
+  overflow-x: hidden;
 }
 
-.navbar {
-  background-color: #19191B;
+.override .bg-theme-primary {
+  background-color: #19191b;
 }
-.navbar a {
-  color: white;
+.override .bg-theme-secondary {
+  background-color: #fa1212;
 }
-.navbar a.active {
-  color: #FA1212 !important;
-  font-weight: bold;
+.override .bg-theme-tertiary {
+  background-color: #343438;
 }
-.navbar .btn-login {
-  background-color: #FA1212;
-  border: none;
-}
-.navbar .btn-login:hover {
-  background-color: #FA1212;
-  border: none;
-}
-
-.card-film {
-  height: 334px;
-}
-.card-film .card {
-  height: inherit;
-  background-image: url("../img/gatot-kaca.png");
-  background-size: cover;
-  border-radius: 1rem;
-}
-.card-film .card .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-}
-
-.sub-title {
-  border-bottom: 3px solid #FA1212;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding-bottom: 0.5rem;
-}
-
-.bg-theme-primary {
-  background-color: #19191b !important;
-}
-
-.bg-theme-secondary {
-  background-color: #fa1212 !important;
-}
-
-.bg-theme-tertiary {
-  background-color: #343438 !important;
-}
-
-.bg-auth {
-  position: absolute;
-  background: url("../img/bg-auth.png");
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.override .text-theme-primary {
+  color: #19191b;
 }
 
 .card-auth {
@@ -106,20 +53,119 @@
   color: #19191b;
   border-radius: 1.5rem;
 }
-.card-auth .footer {
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.bg {
+  background-color: #19191b !important;
+}
+
+.navbar {
+  background-color: #19191b;
+}
+.navbar a {
+  color: white;
+}
+.navbar a.active {
+  color: #fa1212 !important;
+  font-weight: bold;
+}
+.navbar .dropdown-menu a {
+  color: black;
+}
+.navbar .btn-login {
+  background-color: #fa1212;
+  border: none;
+}
+.navbar .btn-login:hover {
+  background-color: #fa1212;
+  border: none;
+}
+.navbar .nav-link:hover {
+  color: #fa1212;
+  background-color: transparent;
+}
+.navbar .nav-link:focus {
+  color: #fa1212;
+  background-color: transparent;
+}
+
+.card-film {
+  height: 334px;
+}
+.card-film .card {
+  height: inherit;
+  background-image: url("../img/gatot-kaca.png");
+  background-size: cover;
+  border-radius: 1rem;
+}
+.card-film .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.sub-title {
+  border-bottom: 3px solid #fa1212;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 0.5rem;
+}
+
+.bg-auth {
+  position: absolute;
+  background: url("../img/bg-auth.png");
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.bg-auth .btn-link {
+  color: #fa1212;
+  text-decoration: none;
+}
+.bg-auth .footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.card-auth .footer .btn-link {
-  color: #fa1212;
-  text-decoration: none;
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.input-container .form-control {
+  background-color: #343438;
+  border: none;
+}
+.input-container i {
+  font-size: 1.2rem;
+}
+
+.link-active {
+  background-color: #fa1212 !important;
+  color: white !important;
+}
+
+.nav-link:hover {
+  background-color: #fa1212;
+  transition: all 0.5s;
 }
 
 .jumbotron {
-  background-image: url("../img/jumbotron.png");
   color: white;
   background-size: cover;
+  height: inherit;
 }
 
 .accordion .accordion-item .accordion-button {
@@ -136,7 +182,7 @@
   color: white;
 }
 .send-question .btn-send {
-  background-color: #FA1212;
+  background-color: #fa1212;
   color: white;
 }
 
@@ -161,7 +207,7 @@
 }
 
 .btn-primary {
-  background-color: #FA1212 !important;
+  background-color: #fa1212 !important;
   border: none !important;
 }
 
@@ -175,7 +221,7 @@
   color: white !important;
 }
 .pagination .page-link.active {
-  background-color: #FA1212 !important;
+  background-color: #fa1212 !important;
 }
 
 .container-menu {
@@ -186,7 +232,7 @@
   padding: 0;
 }
 .container-menu ul li {
-  background-color: #19191B;
+  background-color: #19191b;
   margin-bottom: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -200,7 +246,7 @@
   background-color: #343438 !important;
 }
 .card-transaksi .card-transaksi-item {
-  background-color: #19191B !important;
+  background-color: #19191b !important;
 }
 
 .navigation {

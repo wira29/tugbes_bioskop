@@ -8,6 +8,10 @@ $tertiaryColor: #343438;
   padding: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 // Override
 .override {
   .bg-theme-primary {
@@ -24,17 +28,6 @@ $tertiaryColor: #343438;
   }
 }
 // auth
-.bg-auth {
-  position: absolute;
-  background: url('../img/bg-auth.png');
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 .card-auth {
   background-color: $primaryColor !important;
   color: white;
@@ -48,6 +41,7 @@ $tertiaryColor: #343438;
     background-color: $tertiaryColor;
     color: white;
   }
+  
 
   .title {
     font-weight: bold;
@@ -72,8 +66,7 @@ $tertiaryColor: #343438;
     color: $primaryColor;
     border-radius: 1.5rem;
   }
-
-  .footer {
+}
 *{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -82,7 +75,7 @@ $tertiaryColor: #343438;
 }
 
 .bg{
-    background-color: $primaryColor;
+    background-color: $primaryColor!important;
 }
 
 // navbar
@@ -95,6 +88,11 @@ $tertiaryColor: #343438;
         color: $secondaryColor!important;
         font-weight: bold;
     }
+
+    .dropdown-menu a{
+      color: black;
+    }
+
     .btn-login{
         background-color: $secondaryColor;
         border: none;
@@ -102,6 +100,16 @@ $tertiaryColor: #343438;
     .btn-login:hover{
         background-color: $secondaryColor;
         border: none;
+    }
+
+    .nav-link:hover{
+      color: $secondaryColor;
+      background-color: transparent;
+    }
+
+    .nav-link:focus{
+      color: $secondaryColor;
+      background-color: transparent;
     }
 }
 // end navbar
@@ -144,13 +152,19 @@ $tertiaryColor: #343438;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 
     .btn-link {
       color: $secondaryColor;
       text-decoration: none;
     }
+
+    .footer{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
   }
-}
 // end auth
 
 // input
@@ -184,6 +198,7 @@ $tertiaryColor: #343438;
 .jumbotron{
     color: white;
     background-size: cover;
+    height: inherit;
 }
 
 .accordion {
@@ -317,4 +332,4 @@ footer {
             color: white;
         }
     }
-}}
+}

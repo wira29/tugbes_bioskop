@@ -5,7 +5,7 @@ class Route
     'GET@/' => 'UserController@index',
     'GET@/login' => 'AuthController@index',
     'POST@/processLogin' => 'AuthController@processLogin',
-    'GET@/register' => 'UserController@index',
+    'GET@/register' => 'AuthController@index',
     'GET@/home' => 'HomeController@index',
     'GET@/admin/user' => 'AdminUserController@index',
     'GET@/admin/user/:id' => 'AdminUserController@show',

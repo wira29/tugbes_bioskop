@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once 'Controller.php';
 require_once 'Koneksi.php';
 require_once 'Route.php';

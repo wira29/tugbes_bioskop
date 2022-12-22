@@ -4,7 +4,9 @@
 
 <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="<?= $uriHelper->baseUrl('home') ?>">
+                <img src="<?= $uriHelper->baseUrl('assets/img/tba-white.png') ?>" width="100" alt="">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -13,7 +15,20 @@
                 <a class="nav-link me-3 active" aria-current="page" href="#">Beranda</a>
                 <a class="nav-link me-3" href="#">Film</a>
                 <a class="nav-link me-3" href="#">Bantuan</a>
-                <a class="nav-link btn btn-login" href="#">Masuk</a>
+                <?php if(!isset($_SESSION['user'])){ ?>
+                    <a class="nav-link btn btn-login" href="#">Masuk</a>
+                <?php } else { ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?= $_SESSION['user']->nama ?>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Profil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Keluar</a></li>
+                        </ul>
+                    </li>
+                <?php } ?>
             </div>
             </div>
         </div>
