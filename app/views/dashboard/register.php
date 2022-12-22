@@ -33,11 +33,15 @@
           <h1 class="title">Daftar</h1>
           <p>silakan masukkan data diri anda dengan benar</p>
           <div class="divider"></div>
+
+          <?php Flasher::flash() ?>
+
+          <form action="<?= $uriHelper->baseUrl('processRegister') ?>" method="POST">
           <div class="row mt-3">
             <div class="col-12 mt-5">
               <div class="input-container">
                 <i class="fa fa-user icon"></i>
-                <input class="form-control" type="text" placeholder="Nama" name="email">
+                <input class="form-control" type="text" placeholder="Nama" name="nama">
               </div>
             </div>
             <div class="col-12 mt-3">
@@ -55,24 +59,25 @@
             <div class="col-12 mt-3">
               <div class="input-container">
                 <i class="fa fa-lock icon"></i>
-                <input class="form-control" type="text" placeholder="Password" name="email">
+                <input class="form-control" type="password" placeholder="Password" name="password">
               </div>
             </div>
             <div class="col-12 mt-3">
               <div class="input-container">
                 <i class="fa fa-lock icon"></i>
-                <input class="form-control" type="text" placeholder="Ulangi Password" name="email">
+                <input class="form-control" type="password" placeholder="Ulangi Password" name="konfirmasi_password">
               </div>
             </div>
           </div>
           <div class="row mt-5">
             <div class="d-grid gap-2">
-              <button class="btn btn-auth" type="button">Daftar</button>
+              <button class="btn btn-auth" type="submit">Daftar</button>
             </div>
             <div class="col-12 footer mt-5">
-              <p>sudah punya akun ? <a href="/admin/user" class="btn-link">Masuk</a></p>
+              <p>sudah punya akun ? <a href="<?= $uriHelper->baseUrl('login') ?>" class="btn-link">Masuk</a></p>
             </div>
           </div>
+          </form>
         </div>
       </div>
     </div>

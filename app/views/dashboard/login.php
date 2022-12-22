@@ -33,6 +33,9 @@
           <h1 class="title">Selamat Datang</h1>
           <p>silahkan masuk ke dalam akun anda</p>
           <div class="divider"></div>
+
+          <?php Flasher::flash() ?>
+
           <form action="<?= $uriHelper->baseUrl('processLogin') ?>" method="POST">
           <div class="row mt-3">
             <div class="col-12 mt-5">

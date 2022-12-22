@@ -5,6 +5,7 @@ require_once 'Controller.php';
 require_once 'Koneksi.php';
 require_once 'Route.php';
 require_once 'Helper.php';
+require_once 'Flasher.php';
 
 class App
 {

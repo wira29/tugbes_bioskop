@@ -1,7 +1,8 @@
-:root {
+* {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 body {
@@ -54,43 +55,35 @@ body {
   border-radius: 1.5rem;
 }
 
-* {
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0;
-  color: white;
-}
-
 .bg {
   background-color: #19191b !important;
 }
-
-.navbar {
+.bg .navbar {
   background-color: #19191b;
 }
-.navbar a {
+.bg .navbar a {
   color: white;
 }
-.navbar a.active {
+.bg .navbar a.active {
   color: #fa1212 !important;
   font-weight: bold;
 }
-.navbar .dropdown-menu a {
+.bg .navbar .dropdown-menu a {
   color: black;
 }
-.navbar .btn-login {
+.bg .navbar .btn-login {
   background-color: #fa1212;
   border: none;
 }
-.navbar .btn-login:hover {
+.bg .navbar .btn-login:hover {
   background-color: #fa1212;
   border: none;
 }
-.navbar .nav-link:hover {
+.bg .nav-link:hover {
   color: #fa1212;
   background-color: transparent;
 }
-.navbar .nav-link:focus {
+.bg .nav-link:focus {
   color: #fa1212;
   background-color: transparent;
 }
@@ -192,50 +185,16 @@ body {
   align-items: center;
   gap: 1rem;
 }
-.card-auth .input-container .form-control {
+.input-container .form-control {
   background-color: #343438;
   border: none;
 }
-.card-auth .input-container i {
+.input-container i {
   font-size: 1.2rem;
 }
-.card-auth .jumbotron {
-  background-image: url("../img/jumbotron.png");
-  color: white;
-  background-size: cover;
-}
-.card-auth .accordion .accordion-item .accordion-button {
-  background-color: #343438;
-  color: white;
-}
-.card-auth .accordion .accordion-item .accordion-body {
-  background-color: #343438;
-}
-.card-auth .send-question .form-control,
-.card-auth .send-question .form-control:focus {
-  background-color: #343438;
-  border: none;
-  color: white;
-}
-.card-auth .send-question .btn-send {
-  background-color: #fa1212;
-  color: white;
-}
-.card-auth .input-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-}
-.card-auth .input-container .form-control {
-  background-color: #343438;
-  border: none;
-}
-.card-auth .input-container i {
-  font-size: 1.2rem;
-}
-.card-auth .form-control,
-.card-auth .form-control:focus {
+
+.form-control,
+.form-control:focus {
   background-color: #343438 !important;
   border: none !important;
   color: white !important;
@@ -245,10 +204,11 @@ body {
   background-color: #fa1212 !important;
   border: none !important;
 }
-.card-auth .pagination .page-item {
+
+.pagination .page-item {
   margin: 0.5rem;
 }
-.card-auth .pagination .page-link {
+.pagination .page-link {
   border-radius: 0.5rem;
   border: none;
   background-color: #343438 !important;
@@ -257,10 +217,11 @@ body {
 .pagination .page-link.active {
   background-color: #fa1212 !important;
 }
-.card-auth .container-menu {
+
+.container-menu {
   border-radius: 1rem;
 }
-.card-auth .container-menu ul {
+.container-menu ul {
   list-style: none;
   padding: 0;
 }
@@ -270,28 +231,31 @@ body {
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
-.card-auth .container-menu ul li a {
+.container-menu ul li a {
   text-decoration: none;
   color: white;
 }
-.card-auth .card-transaksi {
+
+.card-transaksi {
   background-color: #343438 !important;
 }
 .card-transaksi .card-transaksi-item {
   background-color: #19191b !important;
 }
-.card-auth .navigation {
+
+.navigation {
   background-color: #000 !important;
 }
-.card-auth .navigation a {
+.navigation a {
   text-decoration: none;
   color: white;
 }
-.card-auth footer .menu {
+
+footer .menu {
   list-style: none;
   padding: 0;
 }
-.card-auth footer .menu a {
+footer .menu a {
   text-decoration: none;
   color: white;
 }/*# sourceMappingURL=style.css.map */

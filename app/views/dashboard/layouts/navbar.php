@@ -16,7 +16,7 @@
                 <a class="nav-link me-3" href="#">Film</a>
                 <a class="nav-link me-3" href="#">Bantuan</a>
                 <?php if(!isset($_SESSION['user'])){ ?>
-                    <a class="nav-link btn btn-login" href="#">Masuk</a>
+                    <a class="nav-link btn btn-login" href="<?= $uriHelper->baseUrl('login') ?>">Masuk</a>
                 <?php } else { ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,7 +25,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Profil</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Keluar</a></li>
+                            <li><a class="dropdown-item" href="<?= $uriHelper->baseUrl('logout') ?>">Keluar</a></li>
                         </ul>
                     </li>
                 <?php } ?>

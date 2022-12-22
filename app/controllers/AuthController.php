@@ -35,7 +35,10 @@ class AuthController extends Controller
 
         $user = $this->model->getByEmail($email);
         
-        if(!$user) Helper::redirect('/login');
+        if(!$user){
+            ;
+            Helper::redirect('/login');
+        }
 
         if(password_verify($password, $user->password)){
             // set session 
@@ -51,6 +54,30 @@ class AuthController extends Controller
 
     public function processRegister()
     {
-        
+        if($_POST['password'] != $_POST['konfirmasi_password'])
+        {
+            var_dump('aaa');
+            Flasher::setFlash('gagal', 'password tidak sesuai!', 'danger');
+            Helper::redirect('/register');
+        } else{
+            $data = [
+                $_POST['nama'], $_POST['email'], $_POST['no_telp'], password_hash($_POST['password'], PASSWORD_DEFAULT), 2
+            ];
+    
+            $this->model->store($data);
+    
+            $this->processLogin();
+        }
+
+    }
+
+    /**
+     * handle logout logged user
+     */
+    public function logout()
+    {
+        unset($_SESSION['user']);
+
+        Helper::redirect('/home');
     }
 }

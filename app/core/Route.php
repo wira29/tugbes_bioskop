@@ -2,10 +2,14 @@
 class Route
 {
   private static $routes = [
-    'GET@/' => 'UserController@index',
+    // auth 
     'GET@/login' => 'AuthController@index',
     'POST@/processLogin' => 'AuthController@processLogin',
     'GET@/register' => 'AuthController@index',
+    'POST@/processRegister' => 'AuthController@processRegister',
+    'GET@/logout' => 'AuthController@logout',
+    // end auth 
+    'GET@/' => 'UserController@index',
     'GET@/home' => 'HomeController@index',
     'GET@/admin/user' => 'AdminUserController@index',
     'GET@/admin/user/:id' => 'AdminUserController@show',

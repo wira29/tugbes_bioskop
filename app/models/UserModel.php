@@ -16,6 +16,13 @@ class UserModel
     return $result->fetchObject();
   }
 
+  public function store(array $data)
+  {
+    var_dump($data);
+    $insert = "INSERT INTO user(nama, email, no_telepon, password, id_role) VALUES('$data[0]', '$data[1]', '$data[2]', '$data[3]', '$data[4]')";
+    $this->db->exec($insert);
+  }
+
   public function getAll()
   {
     $query = "SELECT * FROM users";

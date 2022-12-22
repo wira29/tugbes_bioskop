@@ -2,10 +2,11 @@ $primaryColor: #19191b;
 $secondaryColor: #fa1212;
 $tertiaryColor: #343438;
 
-:root {
+* {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 body {
@@ -67,13 +68,8 @@ body {
     border-radius: 1.5rem;
   }
 }
-*{
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: white;
-}
 
+// navbar 
 .bg{
     background-color: $primaryColor!important;
 
@@ -248,67 +244,6 @@ body {
       font-size: 1.2rem;
     }
   }
-  // end input
-
-  // admin
-  .link-active {
-    background-color: $secondaryColor !important;
-    color: white !important;
-  }
-  .nav-link:hover {
-    background-color: $secondaryColor;
-    transition: all 0.5s;
-  }
-  // home
-  .jumbotron {
-    color: white;
-    background-size: cover;
-  }
-
-  .accordion {
-    .accordion-item {
-      .accordion-button {
-        background-color: $tertiaryColor;
-        color: white;
-      }
-
-      .accordion-body {
-        background-color: $tertiaryColor;
-      }
-    }
-  }
-
-  .send-question {
-    .form-control,
-    .form-control:focus {
-      background-color: $tertiaryColor;
-      border: none;
-      color: white;
-    }
-
-    .btn-send {
-      background-color: $secondaryColor;
-      color: white;
-    }
-  }
-  // end home
-
-  // input
-  .input-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-
-    .form-control {
-      background-color: $tertiaryColor;
-      border: none;
-    }
-
-    i {
-      font-size: 1.2rem;
-    }
-  }
 
   .form-control,
   .form-control:focus {
@@ -385,20 +320,6 @@ body {
     }
   }
   // end page checkout
-
-  footer {
-    .menu {
-      list-style: none;
-      padding: 0;
-
-      a {
-        text-decoration: none;
-        color: white;
-      }
-    }
-  }
-
-// end page checkout 
 
 footer {
     .menu{
