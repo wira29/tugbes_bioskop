@@ -34,32 +34,46 @@
           <h2>Film</h2>
         </header>
         <article class="container-fluid ">
-          <form action="/admin/film" method="POST" enctype="multipart/form-data">
+          <form class="needs-validation" novalidate action="/admin/film" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="judul" class="form-label">Judul</label>
               <input type="text" class="form-control" name="judul" id="judul" required>
-              <!-- <div id="namaHelp" class="form-text">We'll never share your nama with anyone else.</div> -->
+              <div class="invalid-feedback">
+                Judul film belum terisi!
+              </div>
             </div>
             <div class="mb-3">
               <label for="deskripsi" class="form-label">Deskripsi</label>
               <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10" required></textarea>
+              <div class="invalid-feedback">
+                Deskripsi belum terisi!
+              </div>
             </div>
             <div class="mb-3">
               <label for="rating" class="form-label">Rating</label>
               <input type="text" class="form-control" name="rating" id="rating" required title="please enter number only">
+              <div class="invalid-feedback">
+                Rating film belum terisi!
+              </div>
             </div>
             <div class="mb-3">
               <div class="mb-3">
                 <label for="poster" class="form-label">Poster</label>
-                <input class="form-control" type="file" id="poster" name="poster">
+                <input class="form-control" type="file" id="poster" name="poster" required>
                 <img class="img-thumbnail" width="400" src="" id="poster-preview">
+                <div class="invalid-feedback">
+                  Poster film belum terisi!
+                </div>
               </div>
             </div>
             <div class="mb-3">
               <div class="mb-3">
                 <label for="cover" class="form-label">Cover</label>
-                <input class="form-control" type="file" id="cover" name="cover">
+                <input class="form-control" type="file" id="cover" name="cover" required>
                 <img class="img-thumbnail" width="400" src="" id="cover-preview">
+                <div class="invalid-feedback">
+                  Cover film belum terisi!
+                </div>
               </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -70,6 +84,21 @@
   </div>
 
   <script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
     const posterInput = document.querySelector('#poster');
     const posterPreview = document.querySelector('#poster-preview');
 

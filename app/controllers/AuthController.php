@@ -18,9 +18,9 @@ class AuthController extends Controller
   public function index()
   {
     $uri = $_SERVER["REQUEST_URI"];
-    if ($uri ==  Helper::getAppname() . '/login') {
+    if ($uri == './' . Helper::getAppname() . '/login') {
       $this->view('dashboard/login');
-    } else if ($uri ==  Helper::getAppname() . '/register') {
+    } else if ($uri == './' /  Helper::getAppname() . '/register') {
       $this->view('dashboard/register');
     }
   }

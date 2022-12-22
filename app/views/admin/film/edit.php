@@ -35,19 +35,27 @@
         </header>
         <article class="container-fluid ">
           <article class="container-fluid ">
-            <form action="/admin/film/<?= $data->id ?>/update" method="POST" enctype="multipart/form-data">
+            <form class="needs-validation" novalidate action="/admin/film/<?= $data->id ?>/update" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
                 <label for="judul" class="form-label">Judul</label>
                 <input type="text" class="form-control" name="judul" value="<?= $data->judul ?>" id="judul" required>
-                <!-- <div id="namaHelp" class="form-text">We'll never share your nama with anyone else.</div> -->
+                <div class="invalid-feedback">
+                  Judul film belum terisi!
+                </div>
               </div>
               <div class="mb-3">
                 <label for="deskripsi" class="form-label">Deskripsi</label>
                 <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10" required><?= $data->deskripsi ?></textarea>
+                <div class="invalid-feedback">
+                  Deskripsi film belum terisi!
+                </div>
               </div>
               <div class="mb-3">
                 <label for="rating" class="form-label">Rating</label>
                 <input type="text" class="form-control" name="rating" value="<?= $data->rating ?>" id="rating" required title="please enter number only">
+                <div class="invalid-feedback">
+                  Rating film belum terisi!
+                </div>
               </div>
               <div class="mb-3">
                 <div class="mb-3">
