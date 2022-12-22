@@ -11,10 +11,10 @@
               <a class="nav-link" href="/admin">Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-active" href="/admin/user">User</a>
+              <a class="nav-link" href="/admin/user">User</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/admin/film">Film</a>
+              <a class="nav-link  link-active" href="/admin/film">Film</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/admin/bioskop">Bioskop</a>
@@ -31,42 +31,36 @@
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex align-items-center gap-3">
           <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
-          <h2>User</h2>
+          <h2>Film</h2>
         </header>
         <article class="container-fluid ">
           <article class="container-fluid ">
-            <form action="/admin/user/<?= $data['id'] ?>/update" method="POST" enctype="multipart/form-data">
+            <form action="/admin/film/<?= $data->id ?>/update" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
-                <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" name="nama" value="<?= $data['nama'] ?>" id="nama" required>
+                <label for="judul" class="form-label">Judul</label>
+                <input type="text" class="form-control" name="judul" value="<?= $data->judul ?>" id="judul" required>
                 <!-- <div id="namaHelp" class="form-text">We'll never share your nama with anyone else.</div> -->
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" value="<?= $data['email'] ?>" id="email" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="no-telepon" class="form-label">No Telepon</label>
-                <input type="text" class="form-control" name="no_telepon" value="<?= $data['no_telepon'] ?>" id="no-telepon" required pattern="[0-9]+" title="please enter number only">
+                <label for="deskripsi" class="form-label">Deskripsi</label>
+                <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10" required><?= $data->deskripsi ?></textarea>
               </div>
               <div class="mb-3">
-                <label for="nama" class="form-label">Role</label>
-                <select class="form-select" name="id_role" value="<?= $data['id_role'] ?>" required>
-                  <option value="1">Admin</option>
-                  <option value="2">User</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <h3>Ubah Password</h3>
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" min="6">
+                <label for="rating" class="form-label">Rating</label>
+                <input type="text" class="form-control" name="rating" value="<?= $data->rating ?>" id="rating" required title="please enter number only">
               </div>
               <div class="mb-3">
                 <div class="mb-3">
-                  <label for="foto" class="form-label">Foto Pengguna</label>
-                  <input class="form-control" type="file" id="foto" name="foto">
-                  <img class="img-thumbnail" width="400" src="/assets/img/user/<?= $data['foto'] ?>" alt="Gambar tidak ditemukan !" id="foto-preview">
+                  <label for="poster" class="form-label">Poster</label>
+                  <input class="form-control" type="file" id="poster" name="poster">
+                  <img class="img-thumbnail" width="400" src="/assets/img/film/poster/<?= $data->poster ?>" id="poster-preview">
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="mb-3">
+                  <label for="cover" class="form-label">Cover</label>
+                  <input class="form-control" type="file" id="cover" name="cover">
+                  <img class="img-thumbnail" width="400" src="/assets/img/film/cover/<?= $data->cover ?>" id="cover-preview">
                 </div>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -77,13 +71,23 @@
     </div>
   </div>
   <script>
-    const fotoInput = document.querySelector('#foto');
-    const fotoPreview = document.querySelector('#foto-preview');
+    const posterInput = document.querySelector('#poster');
+    const posterPreview = document.querySelector('#poster-preview');
 
-    fotoInput.onchange = evt => {
-      const [file] = fotoInput.files
+    posterInput.onchange = evt => {
+      const [file] = posterInput.files
       if (file) {
-        fotoPreview.src = URL.createObjectURL(file)
+        posterPreview.src = URL.createObjectURL(file)
+      }
+    }
+
+    const coverInput = document.querySelector('#cover');
+    const coverPreview = document.querySelector('#cover-preview');
+
+    coverInput.onchange = evt => {
+      const [file] = coverInput.files
+      if (file) {
+        coverPreview.src = URL.createObjectURL(file)
       }
     }
   </script>

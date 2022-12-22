@@ -7,7 +7,7 @@
       <div class="container py-5">
         <div class="row justify-content-between">
             <div class="col-3">
-                <img src="<?= $uriHelper->baseUrl('assets/img/film/' . $data['film']->poster) ?>" alt="">
+                <img src="<?= $uriHelper->baseUrl('assets/img/film/poster/' . $data['film']->poster) ?>" alt="">
             </div>
             <div class="col-7">
                 <h3 class="fw-bold"><?= $data['film']->judul ?></h3>
@@ -33,7 +33,7 @@
                 <div class="row film-container mt-5">
                     <?php foreach($data['lainnya'] as $lainnya){ ?>
                     <a href="<?= $uriHelper->baseUrl('film/'.$lainnya['id']) ?>" class="col-md-3 card-film mt-3">
-                        <div class="card" style="background-image: url('<?= $uriHelper->baseUrl("assets/img/film/". $lainnya['poster']) ?>');">
+                        <div class="card" style="background-image: url('<?= $uriHelper->baseUrl("assets/img/film/poster/". $lainnya['poster']) ?>');">
                             <div class="card-body">
                                 <h4><?= $lainnya['judul'] ?></h4>
                                 <div class="row">

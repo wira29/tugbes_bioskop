@@ -29,7 +29,7 @@ class UserModel
     return $result->fetchAll();
   }
 
-  public function get($id)
+  public function getById($id)
   {
     $query = "SELECT * FROM user WHERE id=:id";
     $result = $this->db->prepare($query);
@@ -49,7 +49,7 @@ class UserModel
 
   public function update($data)
   {
-    $data['password'] = md5($data['password']);
+    $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
     $id = $data['id'];
     unset($data['id']);
 
