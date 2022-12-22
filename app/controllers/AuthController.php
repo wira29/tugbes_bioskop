@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/UserModel.php';
+require_once __DIR__ . '/../core/Helper.php';
 
 class AuthController extends Controller
 {
@@ -35,7 +36,7 @@ class AuthController extends Controller
     $user = $this->model->getByEmail($email);
 
     if (!$user) {;
-      Helper::redirect('/login');
+      Helper::redirect('login');
     }
 
     if (password_verify($password, $user->password)) {
@@ -43,7 +44,7 @@ class AuthController extends Controller
       $_SESSION['user'] = $user;
 
       if ($user->id_role == 2) {
-        Helper::redirect('/home');
+        Helper::redirect('home');
       } else {
       }
     }
@@ -72,6 +73,6 @@ class AuthController extends Controller
   {
     unset($_SESSION['user']);
 
-    Helper::redirect('/home');
+    Helper::redirect('home');
   }
 }
