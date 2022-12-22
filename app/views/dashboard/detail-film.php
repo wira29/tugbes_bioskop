@@ -3,7 +3,7 @@
         require_once __DIR__ . "/layouts/navbar.php";
     ?> 
 
-<div class="p-5 mb-4 rounded-3 jumbotron">
+<div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/jumbotron.png') ?>');">
       <div class="container py-5">
         <div class="row justify-content-between">
             <div class="col-3">
@@ -32,7 +32,7 @@
 
                 <div class="row film-container mt-5">
                     <?php foreach($data['lainnya'] as $lainnya){ ?>
-                    <div class="col-md-3 card-film mt-3">
+                    <a href="<?= $uriHelper->baseUrl('film/'.$lainnya['id']) ?>" class="col-md-3 card-film mt-3">
                         <div class="card" style="background-image: url('<?= $uriHelper->baseUrl("assets/img/film/". $lainnya['poster']) ?>');">
                             <div class="card-body">
                                 <h4><?= $lainnya['judul'] ?></h4>
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <?php } ?>
                 </div>
             </div>
