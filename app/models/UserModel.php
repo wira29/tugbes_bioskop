@@ -18,9 +18,15 @@ class UserModel
 
   public function store(array $data)
   {
-    var_dump($data);
     $insert = "INSERT INTO user(nama, email, no_telepon, password, id_role) VALUES('$data[0]', '$data[1]', '$data[2]', '$data[3]', '$data[4]')";
     $this->db->exec($insert);
+  }
+
+  public function update(array $data, int $id)
+  {
+    $update = "UPDATE user SET nama='$data[0]', email='$data[1]', no_telepon='$data[2]', foto='$data[3]' 
+    WHERE id='$id'";
+    $this->db->exec($update);
   }
 
   public function getAll()
@@ -75,7 +81,7 @@ class UserModel
 
   public function get($id)
   {
-    $query = "SELECT * FROM users WHERE id=:id";
+    $query = "SELECT * FROM user WHERE id=:id";
     $result = $this->db->prepare($query);
     $result->execute(['id' => $id]);
     return $result->fetch();

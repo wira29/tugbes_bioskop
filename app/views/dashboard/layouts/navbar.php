@@ -12,9 +12,9 @@
             </button>
             <div class="collapse navbar-collapse d-flex flex-row justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav py-2">
-                <a class="nav-link me-3 active" aria-current="page" href="#">Beranda</a>
-                <a class="nav-link me-3" href="#">Film</a>
-                <a class="nav-link me-3" href="#">Bantuan</a>
+                <a class="nav-link me-3 active" aria-current="page" href="<?= $uriHelper->baseUrl('home') ?>">Beranda</a>
+                <a class="nav-link me-3" href="<?= $uriHelper->baseUrl('film') ?>">Film</a>
+                <a class="nav-link me-3" href="<?= $uriHelper->baseUrl('home#bantuan') ?>">Bantuan</a>
                 <?php if(!isset($_SESSION['user'])){ ?>
                     <a class="nav-link btn btn-login" href="<?= $uriHelper->baseUrl('login') ?>">Masuk</a>
                 <?php } else { ?>
@@ -23,7 +23,7 @@
                             <?= $_SESSION['user']->nama ?>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profil</a></li>
+                            <li><a class="dropdown-item" href="<?= $uriHelper->baseUrl('profile') ?>">Profil</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="<?= $uriHelper->baseUrl('logout') ?>">Keluar</a></li>
                         </ul>

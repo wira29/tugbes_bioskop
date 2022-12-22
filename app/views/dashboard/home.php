@@ -98,7 +98,7 @@
       </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="bantuan">
         <h4 class="sub-title">Bantuan</h4>
 
         <div class="row mt-5">

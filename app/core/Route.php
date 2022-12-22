@@ -9,8 +9,23 @@ class Route
     'POST@/processRegister' => 'AuthController@processRegister',
     'GET@/logout' => 'AuthController@logout',
     // end auth 
-    'GET@/' => 'UserController@index',
+
+    // home 
     'GET@/home' => 'HomeController@index',
+    // end home 
+
+    // film 
+    'GET@/film' => 'FilmController@index',
+    // end film 
+
+    // profile 
+    'GET@/profile' => 'ProfileController@index',
+    'GET@/updateProfile' => 'ProfileController@edit',
+    'POST@/processUpdateProfile' => 'ProfileController@update',
+    // end profile 
+
+    'GET@/' => 'UserController@index',
+    
     'GET@/admin/user' => 'AdminUserController@index',
     'GET@/admin/user/:id' => 'AdminUserController@show',
     'GET@/admin/user/update/:id' => 'AdminUserController@update',
