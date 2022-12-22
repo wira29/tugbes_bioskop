@@ -37,7 +37,11 @@ class FilmController extends Controller
      */
     public function show(int $id)
     {
-        $film = $this->model->getById($id);
-        var_dump($film);
+        $data = [
+            'film'  => $this->model->getById($id),
+            'lainnya' => $this->model->getRandom($id)
+        ];
+        
+        return $this->view('dashboard/detail-film', $data);
     }
 }

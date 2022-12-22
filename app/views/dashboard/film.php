@@ -28,7 +28,7 @@
 
         <div class="row film-container mt-5">
             <?php foreach($data['films'] as $film){ ?>
-                <a href="" class="col-md-3 card-film mt-3">
+                <a href="<?= $uriHelper->baseUrl('film/'.$film['id']) ?>" class="col-md-3 card-film mt-3">
                     <div class="card" style="background-image: url('<?= $uriHelper->baseUrl("assets/img/film/". $film['poster']) ?>');">
                         <div class="card-body">
                             <h4><?= $film['judul'] ?></h4>

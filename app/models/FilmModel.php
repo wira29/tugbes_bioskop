@@ -34,4 +34,12 @@ class FilmModel
 
         return $result->fetchObject();
     }
+
+    public function getRandom(int $id)
+    {
+        $query = "SELECT * FROM film WHERE id != '$id' ORDER BY RAND() LIMIT 4";
+        $result = $this->db->query($query);
+
+        return $result->fetchAll();
+    }
 }
