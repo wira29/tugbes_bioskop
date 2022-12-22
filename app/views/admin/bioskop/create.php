@@ -1,10 +1,10 @@
 <?php $this->view('admin/layouts/header') ?>
 
+
 <body>
   <div class="override">
     <div class="d-flex max-w-100">
       <?= $this->view('/admin/layouts/sidebar') ?>
-
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex align-items-center gap-3">
           <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
