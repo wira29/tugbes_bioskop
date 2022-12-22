@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/../layouts/header.php'; ?>
+<?php $this->view('admin/layouts/header') ?>
 
 <body>
   <div class="override">

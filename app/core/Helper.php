@@ -2,7 +2,7 @@
 
 class Helper
 {
-  private $base_url = "http://localhost/tugbes-bioskop/";
+  private static $base_url = "http://localhost/tugbes-bioskop/";
   private static $app_name = "tugbes-bioskop";
 
   /**
@@ -12,9 +12,9 @@ class Helper
    * @return string
    */
 
-  public function baseUrl(string $url = null): string
+  public static function baseUrl(string $url = null): string
   {
-    return $this->base_url . $url;
+    return self::$base_url . $url;
   }
 
   /**

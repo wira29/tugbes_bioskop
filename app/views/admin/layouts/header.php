@@ -7,10 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?= Helper::baseUrl('assets/css/bootstrap.min.css') ?>">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
-  <link rel="stylesheet" href="/assets/css/admin.css">
-
+  <link rel="stylesheet" href="<?= Helper::baseUrl('assets/css/admin.css') ?>">
   <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous">
   </script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js">
@@ -19,6 +18,5 @@
   </script>
   <script src="https://kit.fontawesome.com/75fbb137eb.js" crossorigin="anonymous">
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="<?= Helper::baseUrl('assets/js/bootstrap.bundle.min.js') ?>"></script>
 </head>
