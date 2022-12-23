@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../models/UserModel.php';
 require_once __DIR__ . '/../core/Helper.php';
+require_once __DIR__ . '/../middlewares/AuthMiddleware.php';
 
 class AuthController extends Controller
 {
@@ -8,7 +8,7 @@ class AuthController extends Controller
 
   public function __construct()
   {
-    $this->model = new UserModel();
+    $this->model = $this->model('UserModel');
   }
 
   /**
@@ -18,10 +18,11 @@ class AuthController extends Controller
   public function index()
   {
     $uri = $_SERVER["REQUEST_URI"];
-    if ($uri == './' . Helper::getAppname() . '/login') {
-      $this->view('dashboard/login');
-    } else if ($uri == './' /  Helper::getAppname() . '/register') {
-      $this->view('dashboard/register');
+
+    if ($uri ==  Helper::getAppname() . '/login') {
+      return $this->view('dashboard/login');
+    } else if ($uri ==  Helper::getAppname() . '/register') {
+      return $this->view('dashboard/register');
     }
   }
 
@@ -34,8 +35,8 @@ class AuthController extends Controller
     $password = $_POST['password'];
 
     $user = $this->model->getByEmail($email);
-
-    if (!$user) {;
+    var_dump($user);
+    if (!$user) {
       Helper::redirect('login');
     }
 
@@ -45,8 +46,13 @@ class AuthController extends Controller
 
       if ($user->id_role == 2) {
         Helper::redirect('home');
-      } else {
       }
+      if ($user->id_role == 1) {
+        Helper::redirect('admin');
+      }
+    } else {
+      Flasher::setFlash('gagal', 'username atau password tidak ditemukan!', 'danger');
+      Helper::redirect('login');
     }
   }
 
@@ -72,7 +78,6 @@ class AuthController extends Controller
   public function logout()
   {
     unset($_SESSION['user']);
-
     Helper::redirect('home');
   }
 }

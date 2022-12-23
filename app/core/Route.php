@@ -3,7 +3,7 @@ class Route
 {
   private static $routes = [
     // initial 
-    'GET@/' => 'UserController@index',
+    'GET@/' => 'HomeController@index',
 
     // auth 
     'GET@/login' => 'AuthController@index',
@@ -29,7 +29,9 @@ class Route
     'POST@/processUpdateProfile' => 'ProfileController@update',
     // end profile 
 
-    'GET@/admin' => 'HomeController@index',
+    'GET@/admin' => 'HomeController@adminIndex',
+    'GET@/admin/logout' => 'AuthController@logout',
+
     // Admin User
     'GET@/admin/user' => 'AdminUserController@index',
     'GET@/admin/user/create' => 'AdminUserController@create',

@@ -1,3 +1,6 @@
+<?php
+AuthMiddleware::adminAuth();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

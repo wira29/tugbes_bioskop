@@ -6,6 +6,8 @@ require_once 'Koneksi.php';
 require_once 'Route.php';
 require_once 'Helper.php';
 require_once 'Flasher.php';
+require_once __DIR__ . '/../middlewares/AuthMiddleware.php';
+
 
 class App
 {
@@ -24,7 +26,6 @@ class App
   {
     $routes = Route::getRoutes();
     $appname = Helper::getAppname();
-
 
     $requestUri = $_SERVER['REQUEST_URI'];
     $requestMethod = $_SERVER['REQUEST_METHOD'];

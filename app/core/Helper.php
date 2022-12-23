@@ -32,6 +32,6 @@ class Helper
    */
   public static function redirect(string $url)
   {
-    return header('Location: ' . $base_url . $url);
+    return header('Location: ' . self::$base_url . $url);
   }
 }
