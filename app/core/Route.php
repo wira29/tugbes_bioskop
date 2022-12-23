@@ -50,7 +50,7 @@ class Route
     'POST@/admin/film/:id/delete' => 'AdminFilmController@destroy',
     'POST@/admin/film/getall' => 'AdminFilmController@getall', // fetch datatable
 
-    // Admin Film
+    // Admin Bioskop
     'GET@/admin/bioskop' => 'AdminBioskopController@index',
     'GET@/admin/bioskop/create' => 'AdminBioskopController@create',
     'POST@/admin/bioskop' => 'AdminBioskopController@store',
@@ -58,6 +58,15 @@ class Route
     'POST@/admin/bioskop/:id/update' => 'AdminBioskopController@update',
     'POST@/admin/bioskop/:id/delete' => 'AdminBioskopController@destroy',
     'POST@/admin/bioskop/getall' => 'AdminBioskopController@getall', // fetch datatable
+
+    // Admin Teater
+    'GET@/admin/bioskop/:id_bioskop/teater' => 'AdminTeaterController@index',
+    'GET@/admin/bioskop/:id_bioskop/teater/create' => 'AdminTeaterController@create',
+    'POST@/admin/bioskop/teater' => 'AdminTeaterController@store',
+    'GET@/admin/bioskop/:id_bioskop/teater/:id/edit' => 'AdminTeaterController@edit',
+    'POST@/admin/teater/:id/update' => 'AdminTeaterController@update',
+    'POST@/admin/teater/:id/delete' => 'AdminTeaterController@destroy',
+    'POST@/admin/bioskop/:id_bioskop/teater/getall' => 'AdminTeaterController@getall', // fetch datatable
     // 'GET@/admin/user/:id/posts/:post' => 'UserController@show',
   ];
 
