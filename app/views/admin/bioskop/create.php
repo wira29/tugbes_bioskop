@@ -7,6 +7,7 @@
       <?= $this->view('/admin/layouts/sidebar') ?>
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex align-items-center gap-3">
+          <a href="/admin/bioskop" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
           <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
           <h2>Bioskop</h2>
         </header>

@@ -10,7 +10,7 @@
             <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>Film</h2>
           </div>
-          <a type="button" href="/admin/film/create" class="m-3 btn btn-primary">Create</a>
+          <a type="button" href="/admin/film/create" class="m-3 btn btn-primary">Tambah Film</a>
 
         </header>
         <article class="container-fluid ">
