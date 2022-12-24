@@ -3,7 +3,7 @@ class Route
 {
   private static $routes = [
     // initial 
-    'GET@/' => 'HomeController@index',
+    'GET@' => 'HomeController@index',
 
     // auth 
     'GET@/login' => 'AuthController@index',
