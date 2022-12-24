@@ -69,7 +69,6 @@
 
 
       $('#film-table tbody').on('click', '.btn-edit', function() {
-        console.log('p')
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
         window.location = `/admin/film/${id}/edit`;

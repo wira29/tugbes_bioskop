@@ -4,19 +4,25 @@ class AdminTeaterController extends Controller
 
   public function index()
   {
-    $data = $this->model('TeaterModel')->getAll();
-    $this->view('admin/teater/index', $data);
+    $this->view('admin/jadwal/teater/index');
   }
 
-  public function getAll(int $id_bioskop)
+  public function getByBioskop(int $id_bioskop)
   {
-    $data = $this->model('TeaterModel')->fetchDatatable($id_bioskop);
+    $data = $this->model('TeaterModel')->fetchDatatableByBioskop($id_bioskop);
     echo json_encode($data);
   }
 
+  public function getAll()
+  {
+    $data = $this->model('TeaterModel')->fetchDatatable();
+    echo json_encode($data);
+  }
+
+
   public function create(int $id_bioskop)
   {
-    $this->view('admin/teater/create', ['id_bioskop' => $id_bioskop]);
+    $this->view('admin/bioskop/teater/create', ['id_bioskop' => $id_bioskop]);
   }
 
   public function store()
@@ -32,7 +38,7 @@ class AdminTeaterController extends Controller
   {
     $data = $this->model('TeaterModel')->getByIdAndBioskop($id, $id_bioskop);
     $data['id_bioskop'] = $id_bioskop;
-    $this->view('admin/teater/edit', $data);
+    $this->view('admin/bioskop/teater/edit', $data);
   }
 
   public function update(int $id)

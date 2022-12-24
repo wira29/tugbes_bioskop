@@ -35,7 +35,6 @@ class AuthController extends Controller
     $password = $_POST['password'];
 
     $user = $this->model->getByEmail($email);
-    var_dump($user);
     if (!$user) {
       Helper::redirect('login');
     }

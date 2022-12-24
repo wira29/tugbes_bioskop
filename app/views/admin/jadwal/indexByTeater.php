@@ -8,18 +8,21 @@
         <header class="container-fluid d-flex align-items-center justify-content-between">
           <div>
             <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
-            <h2>Bioskop</h2>
+            <h2>Jadwal</h2>
           </div>
-          <a type="button" href="/admin/bioskop/create" class="m-3 btn btn-primary">Create</a>
+          <a type="button" href="/admin/teater/<?= $data['id_teater'] ?>/jadwal/create" class="m-3 btn btn-primary">Create</a>
 
         </header>
         <article class="container-fluid ">
-          <table id="bioskop-table" class="table table-striped w-100">
+          <table id="jadwal-table" class="table table-striped w-100">
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Judul</th>
-                <th>Alamat</th>
+                <th>Film</th>
+                <th>Teater</th>
+                <th>Tanggal</th>
+                <th>Waktu</th>
+                <th>Harga Tiket</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -30,11 +33,11 @@
   </div>
   <script>
     $(document).ready(function() {
-      const table = $('#bioskop-table').DataTable({
+      const table = $('#jadwal-table').DataTable({
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/admin/bioskop/getall",
+          url: "/admin/teater/<?= $data['id_teater'] ?>/jadwal/getbyteater",
           type: "POST",
         },
         columnDefs: [{
@@ -42,17 +45,26 @@
             visible: false,
           },
           {
-            target: 3,
+            target: 6,
             sortable: false,
           },
         ],
         columns: [{
             "data": "id"
           }, {
-            "data": "nama"
+            "data": "judul_film"
           },
           {
-            "data": "alamat"
+            "data": "nama_teater"
+          },
+          {
+            "data": "tanggal"
+          },
+          {
+            "data": "waktu"
+          },
+          {
+            "data": "harga"
           },
           {
             defaultContent: `<div class="d-flex gap-3 justify-content-center">
@@ -64,17 +76,17 @@
       })
 
 
-      $('#bioskop-table tbody').on('click', '.btn-edit', function() {
+      $('#jadwal-table tbody').on('click', '.btn-edit', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
-        window.location = `/admin/bioskop/${id}/edit`;
+        window.location = `/admin/teater/<?= $data['id_teater'] ?>/jadwal/${id}/edit`;
       });
-      $('#bioskop-table tbody').on('click', '.btn-delete', function() {
+      $('#jadwal-table tbody').on('click', '.btn-delete', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
 
         $.ajax({
-          url: `/admin/bioskop/${id}/delete`,
+          url: `/admin/jadwal/${id}/delete`,
           method: 'POST'
         }).done(function() {
           location.reload();

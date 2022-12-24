@@ -20,6 +20,9 @@ $uri = explode('/', $uri);
         <a class="nav-link  <?= $uri[2] == 'bioskop' ? 'link-active' : '' ?>" href="/admin/bioskop">Bioskop</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link  <?= $uri[2] == 'jadwal' || $uri[2] == 'teater' ? 'link-active' : '' ?>" href="/admin/jadwal">Jadwal</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link  <?= $uri[2] == 'transaksi' ? 'link-active' : '' ?>" href="/admin/transaksi">Transaksi</a>
       </li>
       <li class="nav-item mt-auto">

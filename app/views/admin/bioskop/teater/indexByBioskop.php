@@ -4,7 +4,8 @@
   <thead>
     <tr>
       <th>Id</th>
-      <th>Nama</th>
+      <th>Nama Teater</th>
+      <th>Nama Bioskop</th>
       <th>Aksi</th>
     </tr>
   </thead>
@@ -15,15 +16,16 @@
       processing: true,
       serverSide: true,
       ajax: {
-        url: `/admin/bioskop/${<?= $data['id_bioskop'] ?>}/teater/getall`,
+        url: `/admin/bioskop/${<?= $data['id_bioskop'] ?>}/teater/getbybioskop`,
         type: "POST",
+
       },
       columnDefs: [{
           target: 0,
           visible: false,
         },
         {
-          target: 2,
+          target: 3,
           sortable: false,
         },
       ],
@@ -31,6 +33,9 @@
           "data": "id"
         }, {
           "data": "nama_teater"
+        },
+        {
+          "data": "nama_bioskop"
         },
         {
           defaultContent: `<div class="d-flex gap-3 justify-content-center">
@@ -43,7 +48,6 @@
 
 
     $('#teater-table tbody').on('click', '.btn-edit', function() {
-      console.log('p')
       const row = $(this).closest('tr');
       const id = table.row(row).data().id;
 

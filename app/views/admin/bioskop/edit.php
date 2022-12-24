@@ -29,7 +29,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </article>
-        <?= $this->view('admin/teater/index', ['id_bioskop' => $data['id']]) ?>
+        <?= $this->view('admin/bioskop/teater/indexByBioskop', ['id_bioskop' => $data['id']]) ?>
       </main>
     </div>
   </div>

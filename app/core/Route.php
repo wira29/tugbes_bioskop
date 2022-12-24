@@ -53,6 +53,7 @@ class Route
     'POST@/admin/film/:id/update' => 'AdminFilmController@update',
     'POST@/admin/film/:id/delete' => 'AdminFilmController@destroy',
     'POST@/admin/film/getall' => 'AdminFilmController@getall', // fetch datatable
+    'POST@/admin/film/search' => 'AdminFilmController@search',
 
     // Admin Bioskop
     'GET@/admin/bioskop' => 'AdminBioskopController@index',
@@ -66,11 +67,23 @@ class Route
     // Admin Teater
     'GET@/admin/bioskop/:id_bioskop/teater' => 'AdminTeaterController@index',
     'GET@/admin/bioskop/:id_bioskop/teater/create' => 'AdminTeaterController@create',
-    'POST@/admin/bioskop/teater' => 'AdminTeaterController@store',
     'GET@/admin/bioskop/:id_bioskop/teater/:id/edit' => 'AdminTeaterController@edit',
+    'POST@/admin/teater' => 'AdminTeaterController@store',
     'POST@/admin/teater/:id/update' => 'AdminTeaterController@update',
     'POST@/admin/teater/:id/delete' => 'AdminTeaterController@destroy',
-    'POST@/admin/bioskop/:id_bioskop/teater/getall' => 'AdminTeaterController@getall', // fetch datatable
+    'POST@/admin/teater/getall' => 'AdminTeaterController@getAll',
+    'POST@/admin/bioskop/:id_bioskop/teater/getbybioskop' => 'AdminTeaterController@getByBioskop', // fetch datatable
+    // fetch datatable
+
+    // Admin Jadwal
+    'GET@/admin/jadwal' => 'AdminTeaterController@index',
+    'GET@/admin/teater/:id_teater/jadwal' => 'AdminJadwalController@indexByTeater',
+    'GET@/admin/teater/:id_teater/jadwal/create' => 'AdminJadwalController@create',
+    'GET@/admin/teater/:id_teater/jadwal/:id/edit' => 'AdminJadwalController@edit',
+    'POST@/admin/jadwal' => 'AdminJadwalController@store',
+    'POST@/admin/jadwal/:id/update' => 'AdminJadwalController@update',
+    'POST@/admin/jadwal/:id/delete' => 'AdminJadwalController@destroy',
+    'POST@/admin/teater/:id_teater/jadwal/getbyteater' => 'AdminJadwalController@getByTeater', // fetch datatable
     // 'GET@/admin/user/:id/posts/:post' => 'UserController@show',
   ];
 
