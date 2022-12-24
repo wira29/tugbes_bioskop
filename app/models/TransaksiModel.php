@@ -1,6 +1,6 @@
 <?php
 
-class TransaksisModel
+class TransaksiModel
 {
   private $db;
 
@@ -11,7 +11,9 @@ class TransaksisModel
 
   public function getAll()
   {
-    $query = "SELECT * FROM transaksi";
+    $query = "SELECT transaksi.*,user.nama nama_user FROM transaksi 
+INNER JOIN user ON user.id=transaksi.id_user
+";
     $result = $this->db->query($query);
 
     return $result->fetchAll();
@@ -19,7 +21,11 @@ class TransaksisModel
 
   public function getById(int $id)
   {
-    $query = "SELECT * FROM transaksi WHERE id=:id";
+    $query = "SELECT transaksi.*,user.nama nama_user,jadwal.waktu waktu_jadwal,jadwal.tanggal tanggal_jadwal,jadwal.harga harga_tiket,film.judul judul_film FROM transaksi 
+INNER JOIN user ON user.id=transaksi.id_user
+INNER JOIN jadwal ON jadwal.id=transaksi.id_jadwal
+INNER JOIN film ON film.id=jadwal.id_film
+ WHERE transaksi.id=:id";
     $result = $this->db->prepare($query);
     $result->execute(['id' => $id]);
     return $result->fetch();
@@ -69,7 +75,9 @@ class TransaksisModel
     $direction = $_REQUEST['order'][0]['dir'];
     $search = $_REQUEST['search']["value"];
     // get data
-    $query = "SELECT * FROM transaksi WHERE nama LIKE :keyword  ORDER BY $col $direction LIMIT :offs, :lim";
+    $queryJoin = "SELECT transaksi.*,user.nama nama_user FROM transaksi 
+INNER JOIN user ON user.id=transaksi.id_user ";
+    $query =  $queryJoin . "WHERE tanggal_transaksi LIKE :keyword  ORDER BY $col $direction LIMIT :offs, :lim";
     $result  = $this->db->prepare($query);
     $result->execute([
       ':keyword' => '%' . $search . '%',
@@ -82,7 +90,7 @@ class TransaksisModel
     if ($search == "") {
       $totalRecords =  $this->db->query("SELECT * FROM transaksi");
     } else {
-      $totalRecords = "SELECT * FROM transaksi WHERE nama LIKE :keyword";
+      $totalRecords =  $queryJoin . "WHERE tanggal_transaksi LIKE :keyword";
       $totalRecords  = $this->db->prepare($totalRecords);
       $totalRecords->bindValue(':keyword', '%' . $search . '%', PDO::PARAM_STR);
     }

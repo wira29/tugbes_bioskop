@@ -16,16 +16,24 @@
               <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" name="nama" value="<?= $data['nama'] ?>" id="nama" required>
-                <!-- <div id="namaHelp" class="form-text">We'll never share your nama with anyone else.</div> -->
+                <div class="invalid-feedback">
+                  Nama pengguna belum terisi!
+                </div>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" value="<?= $data['email'] ?>" id="email" required>
+                <div class="invalid-feedback">
+                  Email pengguna belum terisi atau tidak valid!
+                </div>
               </div>
 
               <div class="mb-3">
                 <label for="no-telepon" class="form-label">No Telepon</label>
                 <input type="text" class="form-control" name="no_telepon" value="<?= $data['no_telepon'] ?>" id="no-telepon" required pattern="[0-9]+" title="please enter number only">
+                <div class="invalid-feedback">
+                  No Telepon pengguna belum terisi atau tidak valid!
+                </div>
               </div>
               <div class="mb-3">
                 <label for="nama" class="form-label">Role</label>
@@ -33,6 +41,9 @@
                   <option value="1">Admin</option>
                   <option value="2">User</option>
                 </select>
+                <div class="invalid-feedback">
+                  Role pengguna belum terisi!
+                </div>
               </div>
               <div class="mb-3">
                 <h3>Ubah Password</h3>
@@ -54,6 +65,21 @@
     </div>
   </div>
   <script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
     const fotoInput = document.querySelector('#foto');
     const fotoPreview = document.querySelector('#foto-preview');
 

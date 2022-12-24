@@ -84,7 +84,12 @@ class Route
     'POST@/admin/jadwal/:id/update' => 'AdminJadwalController@update',
     'POST@/admin/jadwal/:id/delete' => 'AdminJadwalController@destroy',
     'POST@/admin/teater/:id_teater/jadwal/getbyteater' => 'AdminJadwalController@getByTeater', // fetch datatable
-    // 'GET@/admin/user/:id/posts/:post' => 'UserController@show',
+
+    // Admin Transaksi
+    'GET@/admin/transaksi' => 'AdminTransaksiController@index',
+    'GET@/admin/transaksi/:id/detail' => 'AdminTransaksiController@show',
+    'POST@/admin/transaksi/getall' => 'AdminTransaksiController@getAll',
+
   ];
 
   public static  function getRoutes()
