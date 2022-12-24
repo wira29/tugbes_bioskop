@@ -28,7 +28,7 @@ require_once __DIR__ . "/layouts/navbar.php";
       <div class="row film-container mt-5">
         <?php foreach ($data['films'] as $film) { ?>
           <a href="<?= $uriHelper->baseUrl('film/' . $film['id']) ?>" class="col-md-3 card-film mt-3">
-            <div class="card" style="background-image: url('<?= $uriHelper->baseUrl("assets/img/film/poster" . $film['poster']) ?>');">
+            <div class="card" style="background-image: url('<?= $uriHelper->baseUrl("assets/img/film/poster/" . $film['poster']) ?>');">
               <div class="card-body">
                 <h4><?= $film['judul'] ?></h4>
                 <div class="row">

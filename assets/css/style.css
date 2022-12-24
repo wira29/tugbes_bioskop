@@ -255,6 +255,21 @@ body {
   color: white;
 }
 
+.container-jadwal .card-item.active {
+  background-color: #fa1212;
+}
+.container-jadwal .card-item.active p {
+  color: white;
+  margin: 0;
+}
+.container-jadwal .card-item {
+  background-color: white;
+}
+.container-jadwal .card-item p {
+  color: #19191b;
+  margin: 0;
+}
+
 footer .menu {
   list-style: none;
   padding: 0;

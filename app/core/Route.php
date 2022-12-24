@@ -27,7 +27,11 @@ class Route
     'GET@/profile' => 'ProfileController@index',
     'GET@/updateProfile' => 'ProfileController@edit',
     'POST@/processUpdateProfile' => 'ProfileController@update',
-    // end profile 
+    // end profile
+
+    // checkout 
+    'GET@/checkout/:id' => 'CheckoutController@index',
+    // end checkout 
 
     'GET@/admin' => 'HomeController@adminIndex',
     'GET@/admin/logout' => 'AuthController@logout',

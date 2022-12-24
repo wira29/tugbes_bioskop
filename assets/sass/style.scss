@@ -323,6 +323,24 @@ body {
       color: white;
     }
   }
+
+  .container-jadwal{
+    .card-item.active{
+      background-color: $secondaryColor;
+      p{
+        color: white;
+        margin: 0;
+      }
+    }
+
+    .card-item{
+      background-color: white;
+      p{
+        color: $primaryColor;
+        margin: 0;
+      }
+    }
+  }
   // end page checkout
 
 footer {
