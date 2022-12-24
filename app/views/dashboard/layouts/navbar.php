@@ -1,5 +1,8 @@
 <?php
         require_once __DIR__ . "/./app.php";
+
+        $url = $_SERVER['REQUEST_URI'];
+        $url = explode('/', $url)[2];
     ?>
 
 <nav class="navbar navbar-expand-lg">
@@ -12,8 +15,8 @@
             </button>
             <div class="collapse navbar-collapse d-flex flex-row justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav py-2">
-                <a class="nav-link me-3 active" aria-current="page" href="<?= $uriHelper->baseUrl('home') ?>">Beranda</a>
-                <a class="nav-link me-3" href="<?= $uriHelper->baseUrl('film') ?>">Film</a>
+                <a class="nav-link me-3 <?= ($url == "home") ? 'active' : '' ?>" aria-current="page" href="<?= $uriHelper->baseUrl('home') ?>">Beranda</a>
+                <a class="nav-link me-3 <?= ($url == "film") ? 'active' : '' ?>" href="<?= $uriHelper->baseUrl('film') ?>">Film</a>
                 <a class="nav-link me-3" href="<?= $uriHelper->baseUrl('home#bantuan') ?>">Bantuan</a>
                 <?php if(!isset($_SESSION['user'])){ ?>
                     <a class="nav-link btn btn-login" href="<?= $uriHelper->baseUrl('login') ?>">Masuk</a>

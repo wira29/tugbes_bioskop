@@ -5,7 +5,7 @@
 
     <div  style="background-color: black;">
         <div class="container p-3">
-            <a href="" class="text-white fs-5"><i class="fas fa-arrow-left me-3"></i> Kembali</a>
+            <a href="<?= $uriHelper->baseUrl('film/'. $data['film']->id) ?>" class="text-white fs-5"><i class="fas fa-arrow-left me-3"></i> Kembali</a>
         </div>
     </div>
     <div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/jumbotron.png') ?>');">

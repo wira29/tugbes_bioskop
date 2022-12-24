@@ -17,7 +17,7 @@
                     <?= $data['film']->deskripsi ?>
                 </p>
 
-                <a href="" class="btn btn-primary mt-5">Pesan Sekarang</a>
+                <a href="<?= $uriHelper->baseUrl('checkout/' . $data['film']->id) ?>" class="btn btn-primary mt-5">Pesan Sekarang</a>
             </div>
         </div>
       </div>
