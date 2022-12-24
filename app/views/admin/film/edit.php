@@ -39,14 +39,14 @@
                 <div class="mb-3">
                   <label for="poster" class="form-label">Poster</label>
                   <input class="form-control" type="file" id="poster" name="poster">
-                  <img class="img-thumbnail" width="400" src="/assets/img/film/poster/<?= $data->poster ?>" id="poster-preview">
+                  <img class="img-thumbnail" width="400" accept="image/*" src="/assets/img/film/poster/<?= $data->poster ?>" id="poster-preview">
                 </div>
               </div>
               <div class="mb-3">
                 <div class="mb-3">
                   <label for="cover" class="form-label">Cover</label>
                   <input class="form-control" type="file" id="cover" name="cover">
-                  <img class="img-thumbnail" width="400" src="/assets/img/film/cover/<?= $data->cover ?>" id="cover-preview">
+                  <img class="img-thumbnail" width="400" accept="image/*" src="/assets/img/film/cover/<?= $data->cover ?>" id="cover-preview">
                 </div>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>

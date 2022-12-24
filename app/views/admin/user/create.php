@@ -52,7 +52,7 @@
               <div class="mb-3">
                 <label for="foto" class="form-label">Foto Pengguna</label>
                 <input class="form-control" type="file" id="foto" name="foto" required>
-                <img class="img-thumbnail" width="400" src="" id="foto-preview">
+                <img class="img-thumbnail" width="400" accept="image/*" src="" id="foto-preview">
                 <div class="invalid-feedback">
                   Foto pengguna belum terisi!
                 </div>

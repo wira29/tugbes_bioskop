@@ -38,7 +38,7 @@
               <div class="mb-3">
                 <label for="poster" class="form-label">Poster</label>
                 <input class="form-control" type="file" id="poster" name="poster" required>
-                <img class="img-thumbnail" width="400" src="" id="poster-preview">
+                <img class="img-thumbnail" width="400" accept="image/*" src="" id="poster-preview">
                 <div class="invalid-feedback">
                   Poster film belum terisi!
                 </div>
@@ -48,7 +48,7 @@
               <div class="mb-3">
                 <label for="cover" class="form-label">Cover</label>
                 <input class="form-control" type="file" id="cover" name="cover" required>
-                <img class="img-thumbnail" width="400" src="" id="cover-preview">
+                <img class="img-thumbnail" width="400" accept="image/*" src="" id="cover-preview">
                 <div class="invalid-feedback">
                   Cover film belum terisi!
                 </div>

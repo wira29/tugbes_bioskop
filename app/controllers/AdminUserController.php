@@ -58,10 +58,9 @@ class AdminUserController extends Controller
 
       $_POST['foto'] = $uploadedFile;
     }
-    $result = $this->model('UserModel')->update($_POST);
-    if ($result > 0) {
-      $this->back();
-    }
+    $this->model('UserModel')->update($_POST);
+
+    $this->back();
   }
 
   public function destroy(int $id)

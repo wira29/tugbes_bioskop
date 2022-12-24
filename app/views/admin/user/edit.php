@@ -55,7 +55,7 @@
                 <div class="mb-3">
                   <label for="foto" class="form-label">Foto Pengguna</label>
                   <input class="form-control" type="file" id="foto" name="foto">
-                  <img class="img-thumbnail" width="400" src="/assets/img/user/<?= $data['foto'] ?>" alt="Gambar tidak ditemukan !" id="foto-preview">
+                  <img class="img-thumbnail" width="400" accept="image/*" src="/assets/img/user/<?= $data['foto'] ?>" alt="Gambar tidak ditemukan !" id="foto-preview">
                 </div>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
