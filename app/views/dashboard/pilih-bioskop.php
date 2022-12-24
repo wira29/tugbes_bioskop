@@ -15,14 +15,13 @@
                 <img src="<?= $uriHelper->baseUrl('assets/img/film/poster/' . $data['film']->poster) ?>" alt="">
             </div>
             <div class="col-7">
+                <p>Judul Film</p>
                 <h3 class="fw-bold"><?= $data['film']->judul ?></h3>
                 <p><i class="fas fa-star text-warning me-2"></i> <?= $data['film']->rating ?> IMDB</p>
 
-                <p class="mt-5">
-                    <?= $data['film']->deskripsi ?>
-                </p>
+                <p class="mt-5">Bioskop</p>
+                <p class="fw-bold">-</p>
 
-                <a href="" class="btn btn-primary mt-5">Pesan Sekarang</a>
             </div>
         </div>
       </div>
