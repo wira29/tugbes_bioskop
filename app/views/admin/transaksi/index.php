@@ -9,9 +9,9 @@
         <header class="container-fluid d-flex align-items-center justify-content-between">
           <div>
             <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
-            <h2>User</h2>
+            <h2>Transaksi</h2>
           </div>
-          <a type="button" href="/admin/user/create" class="m-3 btn btn-primary">Tambah User</a>
+          <!-- <a type="button" href="/admin/user/create" class="m-3 btn btn-primary">Create</a> -->
 
         </header>
         <article class="container-fluid ">
@@ -19,9 +19,9 @@
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>No Telepon</th>
+                <th>User</th>
+                <th>Tanggal</th>
+                <th>Total</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -36,7 +36,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/admin/user/getall",
+          url: "/admin/transaksi/getall",
           type: "POST",
         },
         columnDefs: [{
@@ -51,39 +51,28 @@
         columns: [{
             "data": "id"
           }, {
-            "data": "nama"
+            "data": "nama_user"
+          },
+
+          {
+            "data": "tanggal_transaksi"
           },
           {
-            "data": "email"
-          },
-          {
-            "data": "no_telepon"
+            "data": "total_harga"
           },
           {
             defaultContent: `<div class="d-flex gap-3 justify-content-center">
-            <button class="btn-edit btn btn-warning">Edit</button>
-          <button class="btn-delete btn btn-danger">Delete</button>
+            <button class="btn-detail btn btn-success">Lihat Detail</button>
           </div>`
           },
         ]
       })
 
 
-      $('#user-table tbody').on('click', '.btn-edit', function() {
+      $('#user-table tbody').on('click', '.btn-detail', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
-        window.location = `/admin/user/${id}/edit`;
-      });
-      $('#user-table tbody').on('click', '.btn-delete', function() {
-        const row = $(this).closest('tr');
-        const id = table.row(row).data().id;
-
-        $.ajax({
-          url: `/admin/user/${id}/delete`,
-          method: 'POST'
-        }).done(function() {
-          location.reload();
-        })
+        window.location = `/admin/transaksi/${id}/detail`;
       });
     })
   </script>

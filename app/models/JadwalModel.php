@@ -1,6 +1,6 @@
 <?php
 
-class TeaterModel
+class JadwalModel
 {
   private $db;
 
@@ -9,9 +9,9 @@ class TeaterModel
     $this->db = Koneksi::getInstance()->getPDO();
   }
 
-  public function getAll(int $id_bioskop)
+  public function getAll()
   {
-    $query = "SELECT * FROM teater WHERE id_bioskop='$id_bioskop'";
+    $query = "SELECT * FROM jadwal";
     $result = $this->db->query($query);
 
     return $result->fetchAll();
@@ -19,23 +19,27 @@ class TeaterModel
 
   public function getById(int $id)
   {
-    $query = "SELECT * FROM teater WHERE id=:id";
+    $query = "SELECT * FROM jadwal WHERE id=:id";
     $result = $this->db->prepare($query);
     $result->execute(['id' => $id]);
     return $result->fetch();
   }
 
-  public function getByIdAndBioskop(int $id, int $id_bioskop)
+
+  public function getByIdAndTeater(int $id, int $id_teater)
   {
-    $query = "SELECT * FROM teater WHERE id=:id AND id_bioskop=:id_bioskop";
+    $joinQuery = "SELECT jadwal.*,film.judul judul_film,teater.nama_teater nama_teater FROM jadwal
+INNER JOIN film ON film.id = jadwal.id_film
+INNER JOIN teater ON teater.id=jadwal.id_teater ";
+    $query = $joinQuery . "WHERE jadwal.id=:id AND id_teater=:id_teater";
     $result = $this->db->prepare($query);
-    $result->execute(['id' => $id, 'id_bioskop' => $id_bioskop]);
+    $result->execute(['id' => $id, 'id_teater' => $id_teater]);
     return $result->fetch();
   }
 
   public function insert($data)
   {
-    $query = "INSERT INTO teater (nama_teater,id_bioskop) VALUES (:nama_teater,:id_bioskop)";
+    $query = "INSERT INTO jadwal (id_film,id_teater,waktu,tanggal,harga) VALUES (:id_film,:id_teater,:waktu,:tanggal,:harga)";
     $result = $this->db->prepare($query);
     $result->execute($data);
 
@@ -46,7 +50,7 @@ class TeaterModel
   {
     $id = $data['id'];
     unset($data['id']);
-    $query = "UPDATE teater SET ";
+    $query = "UPDATE jadwal SET ";
     foreach ($data as $key => $val) {
       if ($val) {
         $query .= "$key='$val', ";
@@ -61,13 +65,13 @@ class TeaterModel
 
   public function delete(int $id)
   {
-    $query = "DELETE FROM teater WHERE id=:id";
+    $query = "DELETE FROM jadwal WHERE id=:id";
     $result = $this->db->prepare($query);
     $result->execute(['id' => $id]);
     return $result->rowCount();
   }
 
-  public function fetchDatatableByBioskop(int $id_bioskop)
+  public function fetchDatatable()
   {
     $length = $_REQUEST['length'];
     $start = $_REQUEST['start'];
@@ -76,27 +80,22 @@ class TeaterModel
     $direction = $_REQUEST['order'][0]['dir'];
     $search = $_REQUEST['search']["value"];
     // get data
-    $queryJoin = "SELECT teater.*,bioskop.nama nama_bioskop FROM teater 
-    INNER JOIN bioskop ON bioskop.id = teater.id_bioskop ";
-    $query = $queryJoin . "WHERE nama_teater LIKE :keyword AND id_bioskop=:id_bioskop  ORDER BY $col $direction LIMIT :offs, :lim ";
+    $query = "SELECT * FROM jadwal WHERE nama LIKE :keyword  ORDER BY $col $direction LIMIT :offs, :lim";
     $result  = $this->db->prepare($query);
     $result->execute([
       ':keyword' => '%' . $search . '%',
       ':offs' => (int) $start,
-      ':lim' => (int)$length,
-      ':id_bioskop' => (int)$id_bioskop
+      ':lim' => (int)$length
     ]);
     $data = $result->fetchAll();
     // get Total records
     $totalRecords = 0;
     if ($search == "") {
-      $totalRecords =  $this->db->prepare($queryJoin . "WHERE id_bioskop=:id_bioskop");
-      $totalRecords->bindValue(':id_bioskop', $id_bioskop, PDO::PARAM_INT);
+      $totalRecords =  $this->db->query("SELECT * FROM jadwal");
     } else {
-      $totalRecords = $queryJoin . "WHERE nama_teater LIKE :keyword AND id_bioskop=:id_bioskop";
+      $totalRecords = "SELECT * FROM jadwal WHERE nama LIKE :keyword";
       $totalRecords  = $this->db->prepare($totalRecords);
       $totalRecords->bindValue(':keyword', '%' . $search . '%', PDO::PARAM_STR);
-      $totalRecords->bindValue(':id_bioskop', $id_bioskop, PDO::PARAM_INT);
     }
     $totalRecords->execute();
     $totalRecords = $totalRecords->rowCount();
@@ -111,7 +110,7 @@ class TeaterModel
     return $output;
   }
 
-  public function fetchDatatable()
+  public function fetchDatatableByTeater(int $id_teater)
   {
     $length = $_REQUEST['length'];
     $start = $_REQUEST['start'];
@@ -120,24 +119,28 @@ class TeaterModel
     $direction = $_REQUEST['order'][0]['dir'];
     $search = $_REQUEST['search']["value"];
     // get data
-    $queryJoin = "SELECT teater.*,bioskop.nama nama_bioskop FROM teater 
-    INNER JOIN bioskop ON bioskop.id = teater.id_bioskop ";
-    $query = $queryJoin . "WHERE nama_teater LIKE :keyword  ORDER BY $col $direction LIMIT :offs, :lim ";
+    $joinQuery = "SELECT jadwal.*,film.judul judul_film,teater.nama_teater nama_teater FROM jadwal
+INNER JOIN film ON film.id = jadwal.id_film
+INNER JOIN teater ON teater.id=jadwal.id_teater ";
+    $query = $joinQuery . "WHERE tanggal LIKE :keyword AND id_teater=:id_teater ORDER BY $col $direction LIMIT :offs, :lim ";
     $result  = $this->db->prepare($query);
     $result->execute([
       ':keyword' => '%' . $search . '%',
       ':offs' => (int) $start,
       ':lim' => (int)$length,
+      ':id_teater' => (int)$id_teater
     ]);
     $data = $result->fetchAll();
     // get Total records
     $totalRecords = 0;
     if ($search == "") {
-      $totalRecords =  $this->db->query("SELECT * FROM teater");
+      $totalRecords =  $this->db->prepare($joinQuery . "WHERE id_teater=:id_teater");
+      $totalRecords->bindValue(':id_teater', $id_teater, PDO::PARAM_INT);
     } else {
-      $totalRecords = $queryJoin . "WHERE nama_teater LIKE :keyword";
+      $totalRecords = $joinQuery . "WHERE tanggal LIKE :keyword AND id_teater=:id_teater";
       $totalRecords  = $this->db->prepare($totalRecords);
       $totalRecords->bindValue(':keyword', '%' . $search . '%', PDO::PARAM_STR);
+      $totalRecords->bindValue(':id_teater', $id_teater, PDO::PARAM_INT);
     }
     $totalRecords->execute();
     $totalRecords = $totalRecords->rowCount();

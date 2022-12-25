@@ -4,8 +4,7 @@ class AdminUserController extends Controller
 
   public function index()
   {
-    $data = $this->model('UserModel')->getAll();
-    $this->view('admin/user/index', $data);
+    $this->view('admin/user/index');
   }
 
   public function getAll()
@@ -42,7 +41,6 @@ class AdminUserController extends Controller
   public function show($id)
   {
     echo "hello";
-    var_dump($id);
     // $data = $this->model('UserModel')->get($id);
     // $this->view('admin/user', $data);
   }
@@ -60,10 +58,9 @@ class AdminUserController extends Controller
 
       $_POST['foto'] = $uploadedFile;
     }
-    $result = $this->model('UserModel')->update($_POST);
-    if ($result > 0) {
-      $this->back();
-    }
+    $this->model('UserModel')->update($_POST);
+
+    $this->back();
   }
 
   public function destroy(int $id)

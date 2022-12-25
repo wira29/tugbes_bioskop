@@ -1,6 +1,6 @@
 <?php
 
-class FilmModel
+class TransaksiModel
 {
   private $db;
 
@@ -11,17 +11,9 @@ class FilmModel
 
   public function getAll()
   {
-    $query = "SELECT * FROM film";
-    $result = $this->db->query($query);
-
-    return $result->fetchAll();
-  }
-
-  public function getPaginate(int $page, int $limit)
-  {
-    $offset = $page * $limit;
-
-    $query = "SELECT * FROM film LIMIT $limit OFFSET $offset";
+    $query = "SELECT transaksi.*,user.nama nama_user FROM transaksi 
+INNER JOIN user ON user.id=transaksi.id_user
+";
     $result = $this->db->query($query);
 
     return $result->fetchAll();
@@ -29,31 +21,20 @@ class FilmModel
 
   public function getById(int $id)
   {
-    $query = "SELECT * FROM film WHERE id='$id'";
-    $result = $this->db->query($query);
-
-    return $result->fetchObject();
+    $query = "SELECT transaksi.*,user.nama nama_user,jadwal.waktu waktu_jadwal,jadwal.tanggal tanggal_jadwal,jadwal.harga harga_tiket,film.judul judul_film FROM transaksi 
+INNER JOIN user ON user.id=transaksi.id_user
+INNER JOIN jadwal ON jadwal.id=transaksi.id_jadwal
+INNER JOIN film ON film.id=jadwal.id_film
+ WHERE transaksi.id=:id";
+    $result = $this->db->prepare($query);
+    $result->execute(['id' => $id]);
+    return $result->fetch();
   }
 
-  public function getRandom(int $id)
-  {
-    $query = "SELECT * FROM film WHERE id != '$id' ORDER BY RAND() LIMIT 4";
-    $result = $this->db->query($query);
-
-    return $result->fetchAll();
-  }
-
-  public function search($keyword)
-  {
-    $query = "SELECT id,judul FROM film WHERE judul LIKE '$keyword%'";
-    $result = $this->db->query($query);
-
-    return $result->fetchAll();
-  }
 
   public function insert($data)
   {
-    $query = "INSERT INTO film (judul,rating,deskripsi,poster,cover) VALUES (:judul,:rating,:deskripsi,:poster,:cover)";
+    $query = "INSERT INTO transaksi (id_user,id_jadwal ) VALUES (:nama,:alamat)";
     $result = $this->db->prepare($query);
     $result->execute($data);
 
@@ -64,7 +45,7 @@ class FilmModel
   {
     $id = $data['id'];
     unset($data['id']);
-    $query = "UPDATE film SET ";
+    $query = "UPDATE transaksi SET ";
     foreach ($data as $key => $val) {
       if ($val) {
         $query .= "$key='$val', ";
@@ -77,9 +58,9 @@ class FilmModel
     return $result->rowCount();
   }
 
-  public function delete($id)
+  public function delete(int $id)
   {
-    $query = "DELETE FROM film WHERE id=:id";
+    $query = "DELETE FROM transaksi WHERE id=:id";
     $result = $this->db->prepare($query);
     $result->execute(['id' => $id]);
     return $result->rowCount();
@@ -94,7 +75,9 @@ class FilmModel
     $direction = $_REQUEST['order'][0]['dir'];
     $search = $_REQUEST['search']["value"];
     // get data
-    $query = "SELECT * FROM film WHERE judul LIKE :keyword  ORDER BY $col $direction LIMIT :offs, :lim";
+    $queryJoin = "SELECT transaksi.*,user.nama nama_user FROM transaksi 
+INNER JOIN user ON user.id=transaksi.id_user ";
+    $query =  $queryJoin . "WHERE tanggal_transaksi LIKE :keyword  ORDER BY $col $direction LIMIT :offs, :lim";
     $result  = $this->db->prepare($query);
     $result->execute([
       ':keyword' => '%' . $search . '%',
@@ -105,9 +88,9 @@ class FilmModel
     // get Total records
     $totalRecords = 0;
     if ($search == "") {
-      $totalRecords =  $this->db->query("SELECT * FROM film");
+      $totalRecords =  $this->db->query("SELECT * FROM transaksi");
     } else {
-      $totalRecords = "SELECT * FROM film WHERE judul LIKE :keyword";
+      $totalRecords =  $queryJoin . "WHERE tanggal_transaksi LIKE :keyword";
       $totalRecords  = $this->db->prepare($totalRecords);
       $totalRecords->bindValue(':keyword', '%' . $search . '%', PDO::PARAM_STR);
     }

@@ -27,12 +27,11 @@ class App
     $routes = Route::getRoutes();
     $appname = Helper::getAppname();
 
-    $requestUri = $_SERVER['REQUEST_URI'];
+    $requestUri = rtrim($_SERVER['REQUEST_URI'], '/');
     $requestMethod = $_SERVER['REQUEST_METHOD'];
-
     foreach ($routes as  $route => $callback) {
       list($method, $uri) = explode('@', $route);
-      $pattern = "@^/" . $appname . preg_replace('/\\\:[a-zA-Z0-9\_\-]+/', '([a-zA-Z0-9\-\_]+)', preg_quote($uri)) . "$@D";
+      $pattern = "@^" . $appname . preg_replace('/\\\:[a-zA-Z0-9\_\-]+/', '([a-zA-Z0-9\-\_]+)', preg_quote($uri)) . "$@D";
       $params = array();
 
       if ($requestMethod == $method && preg_match($pattern, $requestUri, $params)) {

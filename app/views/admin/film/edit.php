@@ -7,6 +7,7 @@
 
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex align-items-center gap-3">
+          <a href="/admin/film" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
           <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
           <h2>Film</h2>
         </header>
@@ -38,14 +39,14 @@
                 <div class="mb-3">
                   <label for="poster" class="form-label">Poster</label>
                   <input class="form-control" type="file" id="poster" name="poster">
-                  <img class="img-thumbnail" width="400" src="/assets/img/film/poster/<?= $data->poster ?>" id="poster-preview">
+                  <img class="img-thumbnail" width="400" accept="image/*" src="/assets/img/film/poster/<?= $data->poster ?>" id="poster-preview">
                 </div>
               </div>
               <div class="mb-3">
                 <div class="mb-3">
                   <label for="cover" class="form-label">Cover</label>
                   <input class="form-control" type="file" id="cover" name="cover">
-                  <img class="img-thumbnail" width="400" src="/assets/img/film/cover/<?= $data->cover ?>" id="cover-preview">
+                  <img class="img-thumbnail" width="400" accept="image/*" src="/assets/img/film/cover/<?= $data->cover ?>" id="cover-preview">
                 </div>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>

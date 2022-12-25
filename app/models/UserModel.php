@@ -49,7 +49,9 @@ class UserModel
 
   public function update($data)
   {
-    $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+    if (isset($data['password']) && $data['password'] != null) {
+      $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+    }
     $id = $data['id'];
     unset($data['id']);
 

@@ -10,7 +10,7 @@
             <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>Bioskop</h2>
           </div>
-          <a type="button" href="/admin/bioskop/create" class="m-3 btn btn-primary">Create</a>
+          <a type="button" href="/admin/bioskop/create" class="m-3 btn btn-primary">Tambah Bioskop</a>
 
         </header>
         <article class="container-fluid ">
@@ -65,7 +65,6 @@
 
 
       $('#bioskop-table tbody').on('click', '.btn-edit', function() {
-        console.log('p')
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
         window.location = `/admin/bioskop/${id}/edit`;

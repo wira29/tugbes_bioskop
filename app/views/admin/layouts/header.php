@@ -13,10 +13,13 @@ AuthMiddleware::adminAuth();
   <link rel="stylesheet" href="<?= Helper::baseUrl('assets/css/bootstrap.min.css') ?>">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" href="<?= Helper::baseUrl('assets/css/admin.css') ?>">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
   <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous">
   </script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js">
   </script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js">
   </script>
   <script src="https://kit.fontawesome.com/75fbb137eb.js" crossorigin="anonymous">

@@ -7,6 +7,7 @@
 
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex align-items-center gap-3">
+          <a href="/admin/user" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
           <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
           <h2>User</h2>
         </header>
@@ -51,7 +52,7 @@
               <div class="mb-3">
                 <label for="foto" class="form-label">Foto Pengguna</label>
                 <input class="form-control" type="file" id="foto" name="foto" required>
-                <img class="img-thumbnail" width="400" src="" id="foto-preview">
+                <img class="img-thumbnail" width="400" accept="image/*" src="" id="foto-preview">
                 <div class="invalid-feedback">
                   Foto pengguna belum terisi!
                 </div>

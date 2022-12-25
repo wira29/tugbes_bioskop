@@ -4,8 +4,7 @@ class AdminFilmController extends Controller
 
   public function index()
   {
-    $data = $this->model('FilmModel')->getAll();
-    $this->view('admin/film/index', $data);
+    $this->view('admin/film/index');
   }
 
   public function getAll()
@@ -15,6 +14,12 @@ class AdminFilmController extends Controller
     echo json_encode($data);
   }
 
+  public function search()
+  {
+    $data = $this->model('FilmModel')->search($_POST['query']);
+
+    echo json_encode($data);
+  }
   public function create()
   {
     $this->view('admin/film/create');

@@ -18,7 +18,6 @@ class AuthController extends Controller
   public function index()
   {
     $uri = $_SERVER["REQUEST_URI"];
-    $uri = substr($uri, 1, strlen($uri) - 1);
     if ($uri ==  Helper::getAppname() . '/login') {
       return $this->view('dashboard/login');
     } else if ($uri ==  Helper::getAppname() . '/register') {
@@ -35,7 +34,6 @@ class AuthController extends Controller
     $password = $_POST['password'];
 
     $user = $this->model->getByEmail($email);
-    var_dump($user);
     if (!$user) {
       Helper::redirect('login');
     }

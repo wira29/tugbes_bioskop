@@ -4,8 +4,7 @@ class AdminBioskopController extends Controller
 
   public function index()
   {
-    $data = $this->model('BioskopModel')->getAll();
-    $this->view('admin/bioskop/index', $data);
+    $this->view('admin/bioskop/index');
   }
 
   public function getAll()
