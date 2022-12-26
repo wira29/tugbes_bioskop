@@ -34,7 +34,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/admin/teater/getall",
+          url: "/teater/getall",
           type: "POST",
         },
         columnDefs: [{

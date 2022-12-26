@@ -36,7 +36,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/admin/transaksi/getall",
+          url: "/transaksi/getall",
           type: "POST",
         },
         columnDefs: [{

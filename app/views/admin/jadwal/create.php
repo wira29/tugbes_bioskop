@@ -12,7 +12,7 @@
           <h2>Jadwal</h2>
         </header>
         <article class="container-fluid ">
-          <form class="needs-validation" novalidate action="/admin/jadwal" method="POST" enctype="multipart/form-data">
+          <form class="needs-validation" novalidate action="/jadwal" method="POST" enctype="multipart/form-data">
             <input type="text" class="form-control" name="id_teater" value="<?= $data['id_teater'] ?>" id="id_teater" required hidden>
             <div class="mb-3 w-25">
               <input type="text" class="form-control" name='id_film' id="id_film" required hidden />
@@ -68,7 +68,7 @@
     $(function() {
       $("#film").autocomplete({
         source: function(request, response) {
-          $.post("/admin/film/search", {
+          $.post("/film/search", {
             query: request.term
           }, function(data) {
             data = JSON.parse(data)

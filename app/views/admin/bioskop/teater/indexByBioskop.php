@@ -16,7 +16,7 @@
       processing: true,
       serverSide: true,
       ajax: {
-        url: `/admin/bioskop/${<?= $data['id_bioskop'] ?>}/teater/getbybioskop`,
+        url: `/bioskop/${<?= $data['id_bioskop'] ?>}/teater/getbybioskop`,
         type: "POST",
 
       },
@@ -58,7 +58,7 @@
       const id = table.row(row).data().id;
 
       $.ajax({
-        url: `/admin/teater/${id}/delete`,
+        url: `/teater/${id}/delete`,
         method: 'POST'
       }).done(function() {
         location.reload();

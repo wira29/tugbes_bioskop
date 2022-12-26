@@ -35,7 +35,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/admin/film/getall",
+          url: "/film/getall",
           type: "POST",
         },
         columnDefs: [{
@@ -78,7 +78,7 @@
         const id = table.row(row).data().id;
 
         $.ajax({
-          url: `/admin/film/${id}/delete`,
+          url: `/film/${id}/delete`,
           method: 'POST'
         }).done(function() {
           location.reload();

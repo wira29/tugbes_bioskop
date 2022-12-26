@@ -38,7 +38,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/admin/teater/<?= $data['id_teater'] ?>/jadwal/getbyteater",
+          url: "/teater/<?= $data['id_teater'] ?>/jadwal/getbyteater",
           type: "POST",
         },
         columnDefs: [{
@@ -87,7 +87,7 @@
         const id = table.row(row).data().id;
 
         $.ajax({
-          url: `/admin/jadwal/${id}/delete`,
+          url: `/jadwal/${id}/delete`,
           method: 'POST'
         }).done(function() {
           location.reload();

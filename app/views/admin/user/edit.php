@@ -7,13 +7,13 @@
 
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex align-items-center gap-3">
-          <a href="/admin/jadwal/user" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
+          <a href="/admin/user" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
           <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
           <h2>User</h2>
         </header>
         <article class="container-fluid ">
           <article class="container-fluid ">
-            <form action="/admin/user/<?= $data['id'] ?>/update" method="POST" enctype="multipart/form-data">
+            <form action="/user/<?= $data['id'] ?>/update" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" name="nama" value="<?= $data['nama'] ?>" id="nama" required>

@@ -12,7 +12,7 @@
           <h2>Bioskop</h2>
         </header>
         <article class="container-fluid ">
-          <form class="needs-validation" novalidate action="/admin/bioskop" method="POST" enctype="multipart/form-data">
+          <form class="needs-validation" novalidate action="/bioskop" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="nama" class="form-label">Nama</label>
               <input type="text" class="form-control" name="nama" id="nama" required>

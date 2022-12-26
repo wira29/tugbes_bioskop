@@ -12,7 +12,7 @@
           <h2>User</h2>
         </header>
         <article class="container-fluid ">
-          <form class="needs-validation" novalidate action="/admin/user" method="POST" enctype="multipart/form-data">
+          <form class="needs-validation" novalidate action="/user" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="nama" class="form-label">Nama</label>
               <input type="text" class="form-control" name="nama" id="nama" required>

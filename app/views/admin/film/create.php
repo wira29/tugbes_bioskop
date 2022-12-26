@@ -12,7 +12,7 @@
           <h2>Film</h2>
         </header>
         <article class="container-fluid ">
-          <form class="needs-validation" novalidate action="/admin/film" method="POST" enctype="multipart/form-data">
+          <form class="needs-validation" novalidate action="/film" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="judul" class="form-label">Judul</label>
               <input type="text" class="form-control" name="judul" id="judul" required>

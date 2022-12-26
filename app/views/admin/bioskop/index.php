@@ -34,7 +34,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/admin/bioskop/getall",
+          url: "/bioskop/getall",
           type: "POST",
         },
         columnDefs: [{

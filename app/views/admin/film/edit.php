@@ -13,7 +13,7 @@
         </header>
         <article class="container-fluid ">
           <article class="container-fluid ">
-            <form class="needs-validation" novalidate action="/admin/film/<?= $data->id ?>/update" method="POST" enctype="multipart/form-data">
+            <form class="needs-validation" novalidate action="/film/<?= $data->id ?>/update" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
                 <label for="judul" class="form-label">Judul</label>
                 <input type="text" class="form-control" name="judul" value="<?= $data->judul ?>" id="judul" required>

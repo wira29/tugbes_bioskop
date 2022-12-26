@@ -11,7 +11,7 @@
           <h2>Teater</h2>
         </header>
         <article class="container-fluid ">
-          <form class="needs-validation" novalidate action="/admin/teater" method="POST" enctype="multipart/form-data">
+          <form class="needs-validation" novalidate action="/teater" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <input type="text" class="form-control" name="id_bioskop" value="<?= $data['id_bioskop'] ?>" id="id_bioskop" required hidden>
               <label for="nama_teater" class="form-label">Nama</label>

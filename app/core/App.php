@@ -11,7 +11,7 @@ require_once __DIR__ . '/../middlewares/AuthMiddleware.php';
 
 class App
 {
-  protected $controller = 'login';
+  protected $controller = 'HomeController';
   protected $method = 'index';
   protected $params = [];
   protected $routes;
@@ -19,6 +19,7 @@ class App
 
   public function __construct()
   {
+
     $this->routing();
   }
 

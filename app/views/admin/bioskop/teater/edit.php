@@ -13,7 +13,7 @@
         </header>
         <article class="container-fluid ">
           <article class="container-fluid ">
-            <form class="needs-validation" novalidate action="/admin/teater/<?= $data['id'] ?>/update" method="POST" enctype="multipart/form-data">
+            <form class="needs-validation" novalidate action="/teater/<?= $data['id'] ?>/update" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
                 <input type="text" class="form-control" name="id_bioskop" value="<?= $data['id_bioskop'] ?>" id="nama_teater" required hidden>
                 <label for="nama_teater" class="form-label">Nama</label>
