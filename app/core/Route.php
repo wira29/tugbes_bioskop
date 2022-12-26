@@ -21,6 +21,7 @@ class Route
     'GET@/film' => 'FilmController@index',
     'GET@/film?page=:page' => 'FilmController@index',
     'GET@/film/:id' => 'FilmController@show',
+    'POST@/film/search' => 'FilmController@search',
     // end film 
 
     // profile 

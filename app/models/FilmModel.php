@@ -35,6 +35,15 @@ class FilmModel
     return $result->fetchAll();
   }
 
+  public function searchFilm(string $search)
+  {
+
+    $query = "SELECT * FROM film where judul like '$search%'";
+    $result = $this->db->query($query);
+
+    return $result->fetchAll();
+  }
+
   public function getById(int $id)
   {
     $query = "SELECT * FROM film WHERE id='$id'";

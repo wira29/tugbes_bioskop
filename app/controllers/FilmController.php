@@ -44,4 +44,15 @@ class FilmController extends Controller
         
         return $this->view('dashboard/detail-film', $data);
     }
+
+    public function search()
+    {
+        $cari = $_POST['film'];
+
+        $data = [
+            'films' => $this->model->searchFilm($cari)
+        ];
+        
+        return $this->view('dashboard/film', $data);
+    }
 }

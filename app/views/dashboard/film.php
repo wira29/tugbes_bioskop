@@ -7,19 +7,14 @@ require_once __DIR__ . "/layouts/navbar.php";
   <div class="row">
     <div class="col-md-3 col-sm-12">
       <h4 class="sub-title">Filter</h4>
-
-      <div class="mt-5">
-        <input type="text" class="form-control" placeholder="Film">
-      </div>
-      <div class="mt-3">
-        <input type="text" class="form-control" placeholder="Bioskop">
-      </div>
-      <div class="mt-3">
-        <input type="date" class="form-control" placeholder="Tanggal">
-      </div>
-      <div class="mt-5">
-        <button class="btn btn-primary" style="width: 100%;">Cari</button>
-      </div>
+      <form action="<?= $uriHelper->baseUrl('film/search') ?>" method="POST">
+        <div class="mt-5">
+          <input type="text" name="film" class="form-control" placeholder="Film">
+        </div>
+        <div class="mt-5">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Cari</button>
+        </div>
+      </form>
     </div>
 
     <div class="col-md-9 col-sm-12">
@@ -40,6 +35,7 @@ require_once __DIR__ . "/layouts/navbar.php";
         <?php } ?>
       </div>
 
+      <?php if(isset($data['page'])){ ?>
       <div class="row mt-5">
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">
@@ -67,6 +63,8 @@ require_once __DIR__ . "/layouts/navbar.php";
           </ul>
         </nav>
       </div>
+      <?php } ?>
+
     </div>
 
   </div>
