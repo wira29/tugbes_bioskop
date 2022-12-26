@@ -50,7 +50,7 @@ class ProfileController extends Controller
 
           if ($user['foto'] != null) unlink('assets/img/user/' . $user['foto']);
 
-          $data[3] = $newName;
+          $_POST['foto'] = $newName;
         } else {
           echo 'UKURAN FILE TERLALU BESAR';
         }
@@ -60,6 +60,8 @@ class ProfileController extends Controller
     }
 
     $result = $this->model->update($_POST);
+    $_SESSION['user']->foto = $_POST['foto'];
+
     if ($result > 0) {
       $this->back();
     }
