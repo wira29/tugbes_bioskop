@@ -33,7 +33,6 @@ class App
       list($method, $uri) = explode('@', $route);
       $pattern = "@^" . $appname . preg_replace('/\\\:[a-zA-Z0-9\_\-]+/', '([a-zA-Z0-9\-\_]+)', preg_quote($uri)) . "$@D";
       $params = array();
-
       if ($requestMethod == $method && preg_match($pattern, $requestUri, $params)) {
         list($controller, $action) = explode('@', $callback);
         array_shift($params);

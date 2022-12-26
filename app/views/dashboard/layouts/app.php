@@ -22,6 +22,8 @@ $uriHelper = new Helper();
 
   <script src="https://kit.fontawesome.com/75fbb137eb.js" crossorigin="anonymous"></script>
   <script src="<?= $uriHelper->baseUrl('assets/js/bootstrap.bundle.min.js') ?>"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg">

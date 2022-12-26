@@ -31,6 +31,7 @@ class Route
 
     // checkout 
     'GET@/checkout/:id' => 'CheckoutController@index',
+    'POST@/checkout/getJadwal' => 'CheckoutController@getJadwal',
     // end checkout 
 
     'GET@/admin' => 'HomeController@adminIndex',

@@ -9,6 +9,14 @@ class FilmModel
     $this->db = Koneksi::getInstance()->getPDO();
   }
 
+  public function getBestFilm()
+  {
+    $query = "SELECT * FROM film ORDER BY RAND() LIMIT 4";
+    $result = $this->db->query($query);
+
+    return $result->fetchAll();
+  }
+
   public function getAll()
   {
     $query = "SELECT * FROM film";

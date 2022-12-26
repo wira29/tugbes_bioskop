@@ -16,18 +16,26 @@ class CheckoutController extends Controller
     
     public function index(int $idFilm)
     {
-        $d = $this->model->getJadwalByFilm($idFilm, '2022-12-26');
-        // $teater = array_merge_recursive($d[0], $d[1]);
-        // print_r($teater);
-        $teater = [1];
-        foreach($d as $d){
-            $teater[$d['id_teater']] = [$teater[$d['id_teater']], $d['waktu']];
-        }
-        print_r($teater);
-        die();
+        
         $data = [
+            'tanggal' => $this->model->getTanggal($idFilm),
             'film'  => $this->filmModel->getById($idFilm),
         ];
         return $this->view('dashboard/pilih-bioskop', $data);
+    }
+
+    public function getJadwal()
+    {
+        $idFilm = $_POST['id_film'];
+        $tanggal = $_POST['tanggal'];
+        $bioskop = $this->model->getBioskopByFilm($idFilm, $tanggal);
+        foreach($bioskop as $idx=>$b){
+            $bioskop[$idx]['teater'] = $this->model->getTeaterByBioskop($b['id']);
+            foreach($bioskop[$idx]['teater'] as $id=>$t){
+                $bioskop[$idx]['teater'][$id]['waktu'] = $this->model->getJadwalByTeaterAndFilm($idFilm, $tanggal, $t['id']);
+            }
+        }
+        print_r(json_encode($bioskop));
+        return json_encode($bioskop);
     }
 }

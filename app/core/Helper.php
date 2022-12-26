@@ -3,7 +3,7 @@
 class Helper
 {
   private static $base_url = "http://localhost/tugbes-bioskop/";
-  private static $app_name = "tugbes-bioskop";
+  private static $app_name = "/tugbes-bioskop";
 
   /**
    * Define mutators for site base url

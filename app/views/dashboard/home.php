@@ -44,50 +44,18 @@
         <h4 class="sub-title">Film Terpopuler</h4>
 
         <div class="col-12  row film-container mt-5">
-            <div class="col-md-3 card-film">
-                <div class="card">
+            <?php foreach($data['bestFilm'] as $film){ ?>
+                <a href="<?= $uriHelper->baseUrl('film/' . $film['id']) ?>" class="col-md-3 card-film mt-3">
+                    <div class="card" style="background-image: url('<?= $uriHelper->baseUrl("assets/img/film/poster/" . $film['poster']) ?>');">
                     <div class="card-body">
-                        <h4>Gatot Kaca</h4>
+                        <h4><?= $film['judul'] ?></h4>
                         <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
+                        <p><i class="fas fa-star me-2"></i> <?= $film['rating'] ?> IMDB</p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 card-film">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Gatot Kaca</h4>
-                        <div class="row">
-                            
-                            <p><i class="fas fa-star me-2"></i> 6.7 IMDB</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </a>
+            <?php } ?>
         </div>  
     </div>
 

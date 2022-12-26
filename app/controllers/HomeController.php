@@ -1,11 +1,22 @@
 <?php
 
+require_once __DIR__ . '/../models/FilmModel.php';
+
 class HomeController extends Controller
 {
+  private $filmModel;
+
+  public function __construct()
+  {
+    $this->filmModel = new FilmModel();
+  }
 
   public function index()
   {
-    return $this->view('dashboard/home');
+    $data = [
+      'bestFilm' => $this->filmModel->getBestFilm()
+    ];
+    return $this->view('dashboard/home', $data);
   }
 
   public function adminIndex()
