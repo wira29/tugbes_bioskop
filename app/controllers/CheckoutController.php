@@ -24,17 +24,6 @@ class CheckoutController extends Controller
     return $this->view('dashboard/pilih-bioskop', $data);
   }
 
-  public function pilihKursi(int $id)
-  {
-    $jadwal = $this->model('JadwalModel')->getById($id);
-    $detailTransaksi = $this->model->getBookedSeatByJadwal($id);
-    $bookedSeats = array();
-    foreach ($detailTransaksi as $dt) {
-      array_push($bookedSeats, $dt['kursi']);
-    }
-    return $this->view('dashboard/pilih-kursi', ['jadwal' => $jadwal, 'bookedSeats' => $bookedSeats]);
-  }
-
   public function getJadwal()
   {
     $idFilm = $_POST['id_film'];
@@ -50,12 +39,54 @@ class CheckoutController extends Controller
     return json_encode($bioskop);
   }
 
+  public function pilihKursi(int $id)
+  {
+    $jadwal = $this->model('JadwalModel')->getById($id);
+
+    $transaksi = $this->model->insertTransaksi($_SESSION['user']->id, $jadwal['id'], 0);
+
+    $detailTransaksi = $this->model->getBookedSeatByJadwal($id);
+    $bookedSeats = array();
+    foreach ($detailTransaksi as $dt) {
+      array_push($bookedSeats, $dt['kursi']);
+    }
+    return $this->view('dashboard/pilih-kursi', ['jadwal' => $jadwal, 'bookedSeats' => $bookedSeats, 'transaksi' => $transaksi]);
+  }
+
   public function storeJadwal()
   {
-    var_dump($_POST['selectedSeat']);
+    $selectedSeat = $_POST['selectedSeat'];
+    $harga = $_POST['current_harga'];
+    $idTransaksi = $_POST['idTransaksi']; 
+
+    $this->model->clearKursi($idTransaksi);
+
+    foreach($selectedSeat as $s){
+      $this->model->insertKursi($idTransaksi, $s);
+    }
+
+    $this->model->updateTransaksi($idTransaksi, $harga);
     // $result = $this->model->insert($_POST);
     // if ($result > 0) {
     //   $this->back($_POST['id_teater']);
     // }
+  }
+
+  public function konfirmasi(int $idTransaksi)
+  {
+    $data = [
+      'transaksi' => $this->model->getTransaksiById($idTransaksi),
+      'kursi'     => $this->model->getKursiByTransaksi($idTransaksi)
+    ];
+    return $this->view('dashboard/checkout', $data);
+  }
+
+  public function success(int $idTransaksi)
+  {
+    $data = [
+      'transaksi' => $this->model->getTransaksiById($idTransaksi),
+      'kursi'     => $this->model->getKursiByTransaksi($idTransaksi)
+    ];
+    return $this->view('dashboard/success-checkout', $data);
   }
 }

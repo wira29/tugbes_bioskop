@@ -106,4 +106,25 @@ INNER JOIN user ON user.id=transaksi.id_user ";
 
     return $output;
   }
+
+  public function getTransaksiByUser(int $idUser)
+  {
+    $query = "SELECT tr.id as id_transaksi, tr.tanggal_transaksi, tr.total_harga, j.waktu, j.tanggal, j.harga, t.nama_teater, b.nama, b.alamat, f.judul, f.rating, f.deskripsi, f.poster, f.cover FROM transaksi tr 
+    inner join jadwal j on j.id = tr.id_jadwal
+    inner join teater t on t.id = j.id_teater
+    inner join bioskop b on b.id = t.id_bioskop
+    inner join film f on f.id = j.id_film
+    WHERE tr.id_user = '$idUser' and tr.total_harga != 0";
+    $result = $this->db->query($query);
+
+    return $result->fetchAll();
+  }
+
+  public function getKursiByTransaksi(int $idTransaksi)
+  {
+    $query = "SELECT * FROM detail_transaksi WHERE id_transaksi = '$idTransaksi'";
+    $result = $this->db->query($query);
+
+    return $result->fetchAll();
+  }
 }

@@ -20,7 +20,7 @@ require_once __DIR__ . "/layouts/navbar.php";
         <a href="<?= $uriHelper->baseUrl('updateProfile') ?>">
           <li>Update Profile</li>
         </a>
-        <a href="">
+        <a href="<?= $uriHelper->baseUrl('transaksi') ?>">
           <li>Transaksi</li>
         </a>
         <a href="">

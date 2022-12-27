@@ -46,9 +46,6 @@ require_once __DIR__ . "/layouts/navbar.php";
     <div class="container-bioskop">
       <p>Pilih tanggal terlebih dahulu.</p>
     </div>
-    <div class="col-md-12 text-end mt-5">
-      <button class="btn btn-primary">Lanjutkan</button>
-    </div>
 
   </div>
 </div>
@@ -80,7 +77,7 @@ require_once __DIR__ . "/layouts/navbar.php";
                                                 <div class="card card-item card-waktu" onClick='jadwal(${JSON.stringify(val)}, ${JSON.stringify(t)}, ${JSON.stringify(w)})' data-jadwal="${val}">
                                                     <div class="card-body text-center">
                                                     
-                                                        <a href="/pilih-kursi/${w.id}">${w.waktu}</a>
+                                                        <a href="<?= $uriHelper->baseUrl() ?>pilih-kursi/${w.id}">${w.waktu}</a>
                                                     </div>
                                                 </div>
                                             </div>`

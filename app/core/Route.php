@@ -38,7 +38,8 @@ class Route
     'POST@/checkout/getJadwal' => 'CheckoutController@getJadwal',
     'POST@/checkout/jadwal/:id' => 'CheckoutController@storeJadwal',
     'GET@/pilih-kursi/:id' => 'CheckoutController@pilihKursi',
-
+    'GET@/confirm-checkout/:id' => 'CheckoutController@konfirmasi',
+    'GET@/success-checkout/:id' => 'CheckoutController@success',
     // end checkout 
 
     'GET@/admin' => 'HomeController@adminIndex',
@@ -79,6 +80,7 @@ class Route
     'POST@/teater/:id_teater/jadwal/getbyteater' => 'AdminJadwalController@getByTeater', // fetch datatable
 
     // Transaksi
+    'GET@/transaksi' => 'TransaksiController@index',
     'POST@/transaksi/getall' => 'AdminTransaksiController@getAll', // fetch datatable
 
     // Admin Pages

@@ -1,7 +1,8 @@
-<?php $this->view('dashboard/layouts/navbar') ?>
-
+<?php
+require_once __DIR__ . "/layouts/navbar.php";
+?>
 <body>
-  <div class="container">
+  <div class="container mt-5">
 
     <?php
     $row = 'F';
@@ -19,16 +20,26 @@
       </div><?php
           } ?>
 
-    <button onclick="updateSeat()">send</button>
-    <h2>Harga Rp. 0<p id="harga"></p>
-    </h2>
-    <h2>Tempat Duduk <p id="tempat-duduk">-</p>
-    </h2>
+    <button class="btn btn-primary" onclick="updateSeat()">pilih</button>
+    
+    <div class="row mt-5">
+      <h4>Harga Rp.<span id="harga"></span>
+      </h4>
+      <h4>Tempat Duduk <p id="tempat-duduk">-</p>
+      </h4>
+    </div>
+
+    
+    <div class="col-md-12 text-end mt-5">
+      <a href="<?= $uriHelper->baseUrl('confirm-checkout/' . $data['transaksi']->id) ?>" class="btn btn-primary">Checkout</a>
+    </div>
   </div>
 
   <script>
     const selectedSeat = [];
     const bookedSeat = <?= json_encode($data['bookedSeats']) ?>;
+    let current_harga = 0;
+
     const seatClicked = (e) => {
       const el = e.target
       const seat = el.innerHTML.trim()
@@ -50,10 +61,11 @@
       const harga = document.querySelector('#harga')
       const tempat = document.querySelector('#tempat-duduk')
 
-      harga.innerHTML = 40000 * selectedSeat.length
+      current_harga = '<?= $data['jadwal']['harga'] ?>' * selectedSeat.length
+      harga.innerHTML = current_harga
       let elText = "";
       selectedSeat.forEach(seat => {
-        elText += `<button class='btn btn-green'>${seat}</button>`
+        elText += `<button class='btn btn-success mx-2 mt-3'>${seat}</button>`
         console.log(seat)
       })
       tempat.innerHTML = elText
@@ -62,12 +74,14 @@
 
     const sendSeat = () => {
       $.ajax({
-        url: `/checkout/jadwal/${<?= $data['jadwal']["id"] ?>}`,
+        url: `<?= $uriHelper->baseUrl() ?>checkout/jadwal/${<?= $data['jadwal']["id"] ?>}`,
         method: 'POST',
         data: {
-          selectedSeat
+          selectedSeat, current_harga, idTransaksi: '<?= $data['transaksi']->id ?>'
         }
       })
     }
   </script>
-  <?php $this->view('dashboard/layouts/footer') ?>
+  <?php
+require_once __DIR__ . "/layouts/footer.php";
+?>
