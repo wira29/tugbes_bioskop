@@ -6,10 +6,11 @@
       <?= $this->view('/admin/layouts/sidebar') ?>
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex align-items-center justify-content-between">
-          <div>
-            <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
+          <div class="d-flex align-items-center gap-3">
+            <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>Teater</h2>
           </div>
+          <a type="button" href="/admin/bioskop" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Teater</a>
 
         </header>
         <article class="container-fluid ">

@@ -1,5 +1,5 @@
 <?php
-AuthMiddleware::adminAuth();
+// AuthMiddleware::adminAuth();
 ?>
 <!DOCTYPE html>
 <html lang="en">

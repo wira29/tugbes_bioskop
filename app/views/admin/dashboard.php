@@ -8,7 +8,7 @@
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex align-items-center justify-content-between">
           <div>
-            <a class="text-theme-primary d-md-none" data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
+            <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>Dashboard</h2>
           </div>
           <a type="button" href="/admin/user/create" class="m-3 btn btn-primary">Create</a>

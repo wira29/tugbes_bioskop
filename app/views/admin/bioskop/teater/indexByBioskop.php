@@ -1,5 +1,5 @@
 <h2 class="mt-4 mx-2">Teater</h2>
-<a type="button" href="/admin/bioskop/<?= $data['id_bioskop'] ?>/teater/create" class="m-2 btn btn-primary">Tambah Teater</a>
+<a type="button" href="/admin/bioskop/<?= $data['id_bioskop'] ?>/teater/create" class="m-2 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Teater</a>
 <table id="teater-table" class="table table-striped w-100">
   <thead>
     <tr>
@@ -39,8 +39,8 @@
         },
         {
           defaultContent: `<div class="d-flex gap-3 justify-content-center">
-            <button class="btn-edit btn btn-warning">Edit</button>
-          <button class="btn-delete btn btn-danger">Delete</button>
+            <button class="btn-edit btn btn-warning"><span><i class="fa fa-edit me-2"></i>Edit</button>
+          <button class="btn-delete btn btn-danger"><span><i class="fa fa-trash me-2"></i>Delete</button>
           </div>`
         },
       ]
