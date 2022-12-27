@@ -36,6 +36,9 @@ class Route
     // checkout 
     'GET@/checkout/:id' => 'CheckoutController@index',
     'POST@/checkout/getJadwal' => 'CheckoutController@getJadwal',
+    'POST@/checkout/jadwal/:id' => 'CheckoutController@storeJadwal',
+    'GET@/pilih-kursi/:id' => 'CheckoutController@pilihKursi',
+
     // end checkout 
 
     'GET@/admin' => 'HomeController@adminIndex',
@@ -100,7 +103,7 @@ class Route
     'GET@/admin/bioskop/:id_bioskop/teater/:id/edit' => 'AdminTeaterController@edit',
 
     // Admin Jadwal
-    'GET@/jadwal' => 'AdminTeaterController@index',
+    'GET@/admin/jadwal' => 'AdminTeaterController@index',
     'GET@/admin/teater/:id_teater/jadwal' => 'AdminJadwalController@indexByTeater',
     'GET@/admin/teater/:id_teater/jadwal/create' => 'AdminJadwalController@create',
     'GET@/admin/teater/:id_teater/jadwal/:id/edit' => 'AdminJadwalController@edit',

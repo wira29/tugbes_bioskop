@@ -36,6 +36,17 @@ class CheckoutModel
     return $result->fetchAll();
   }
 
+  public function getBookedSeatByJadwal(int $idJadwal)
+  {
+    $query = "SELECT detail_transaksi.kursi FROM detail_transaksi
+INNER JOIN transaksi ON detail_transaksi.id_transaksi=transaksi.id
+INNER JOIN jadwal ON transaksi.id_jadwal=jadwal.id
+WHERE jadwal.id=:idJadwal;";
+    $result = $this->db->prepare($query);
+    $result->execute(['idJadwal' => $idJadwal]);
+    return $result->fetchAll();
+  }
+
   public function getTanggal(int $idFilm)
   {
     $sql = "SELECT distinct(tanggal) FROM jadwal where id_film = '$idFilm' and tanggal >= curdate()";

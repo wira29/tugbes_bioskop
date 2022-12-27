@@ -33,6 +33,7 @@ class DetailTransaksiModel
     return $result->fetchAll();
   }
 
+
   public function insert($data)
   {
     $query = "INSERT INTO detail_transaksi(id_transaksi,kursi) VALUES(:id_transaksi,:kursi)";
