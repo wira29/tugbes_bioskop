@@ -1,5 +1,5 @@
 <h2 class="mt-4 mx-2">Teater</h2>
-<a type="button" href="<?= Helper::baseUrl('admin/bioskop/' . $data['id_bioskop'] . '/edit') ?>" class="m-2 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Teater</a>
+<a type="button" href="<?= Helper::baseUrl('admin/bioskop/' . $data['id_bioskop'] . '/teater/create') ?>" class="m-2 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Teater</a>
 <table id="teater-table" class="table table-striped w-100">
   <thead>
     <tr>

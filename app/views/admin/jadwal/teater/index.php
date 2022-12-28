@@ -10,7 +10,7 @@
             <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>Teater</h2>
           </div>
-          <a type="button" href="<?= Helper::baseUrl() ?>admin/bioskop" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Teater</a>
+          <a type="button" href="<?= Helper::baseUrl() ?>admin/teater/create" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Teater</a>
 
         </header>
         <article class="container-fluid ">

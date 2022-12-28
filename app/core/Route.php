@@ -58,16 +58,19 @@ class Route
     'POST@/film/:id/update' => 'AdminFilmController@update',
     'POST@/film/:id/delete' => 'AdminFilmController@destroy',
     'POST@/film/getall' => 'AdminFilmController@getall', // fetch datatable
-    'POST@/film/search' => 'AdminFilmController@search',
+    'POST@/film/searchByName' => 'AdminFilmController@searchByName', // fetch autocomplete
 
     // Bioskop
     'POST@/bioskop' => 'AdminBioskopController@store',
     'POST@/bioskop/:id/update' => 'AdminBioskopController@update',
     'POST@/bioskop/:id/delete' => 'AdminBioskopController@destroy',
     'POST@/bioskop/getall' => 'AdminBioskopController@getall', // fetch datatable
+    'POST@/bioskop/searchByName' => 'AdminBioskopController@searchByName', // fetch autocomplete
 
     // Teater
     'POST@/teater' => 'AdminTeaterController@store',
+    'POST@/bioskop/teater' => 'AdminTeaterController@storeByBioskop',
+
     'POST@/teater/:id/update' => 'AdminTeaterController@update',
     'POST@/teater/:id/delete' => 'AdminTeaterController@destroy',
     'POST@/teater/getall' => 'AdminTeaterController@getAll',
@@ -101,7 +104,8 @@ class Route
 
     // Admin Teater
     'GET@/admin/bioskop/:id_bioskop/teater' => 'AdminTeaterController@index',
-    'GET@/admin/bioskop/:id_bioskop/teater/create' => 'AdminTeaterController@create',
+    'GET@/admin/bioskop/:id_bioskop/teater/create' => 'AdminTeaterController@createByBioskop',
+    'GET@/admin/teater/create' => 'AdminTeaterController@create',
     'GET@/admin/bioskop/:id_bioskop/teater/:id/edit' => 'AdminTeaterController@edit',
 
     // Admin Jadwal

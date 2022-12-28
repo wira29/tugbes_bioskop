@@ -7,7 +7,7 @@
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex flex-column justify-items-center gap-3">
           <div>
-            <a href="<?= Helper::baseUrl('admin/bioskop/' . $data['id_bioskop'] . '/edit') ?>" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
+            <a href="<?= Helper::baseUrl('admin/jadwal/') ?>" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
           </div>
           <div class="d-flex align-items-center gap-3">
             <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
@@ -15,9 +15,16 @@
           </div>
         </header>
         <article class="container-fluid ">
-          <form class="needs-validation" novalidate action="<?= Helper::baseUrl('bioskop/teater') ?>" method="POST" enctype="multipart/form-data">
+          <form class="needs-validation" novalidate action="<?= Helper::baseUrl('teater') ?>" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
-              <input type="text" class="form-control" name="id_bioskop" value="<?= $data['id_bioskop'] ?>" id="id_bioskop" required hidden>
+              <input type="text" class="form-control" name='id_bioskop' id="id_bioskop" required hidden />
+              <label for="bioskop" class="form-label">Bioskop</label>
+              <input type="text" class="form-control" id="bioskop" required onchange="setIdBioskop(event)" />
+              <div class="invalid-feedback">
+                Bioskop belum terisi!
+              </div>
+            </div>
+            <div class="mb-3">
               <label for="nama_teater" class="form-label">Nama</label>
               <input type="text" class="form-control" name="nama_teater" id="nama_teater" required>
               <div class="invalid-feedback">
@@ -32,6 +39,32 @@
   </div>
 
   <script>
+    let bioskops = []
+    const setIdBioskop = (e) => {
+      bioskops.filter((bioskop) => {
+        if (bioskop.nama == e.target.value) {
+          document.getElementById('id_bioskop').value = bioskop.id
+        }
+      })
+    }
+    $(function() {
+      $("#bioskop").autocomplete({
+        source: function(request, response) {
+          $.post("<?= Helper::baseUrl() ?>bioskop/searchByName", {
+            query: request.term
+          }, function(data) {
+            data = JSON.parse(data)
+            bioskops = [...data]
+            let dat = []
+            data.map((bioskop) => {
+              dat.push(bioskop['nama'])
+            })
+            response(dat);
+          });
+        },
+        minLength: 3
+      });
+    });
     (function() {
       'use strict';
       window.addEventListener('load', function() {

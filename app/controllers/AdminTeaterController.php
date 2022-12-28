@@ -19,18 +19,30 @@ class AdminTeaterController extends Controller
     echo json_encode($data);
   }
 
+  public function create()
+  {
+    $this->view('admin/jadwal/teater/create');
+  }
 
-  public function create(int $id_bioskop)
+  public function createByBioskop(int $id_bioskop)
   {
     $this->view('admin/bioskop/teater/create', ['id_bioskop' => $id_bioskop]);
   }
 
-  public function store()
-  {
 
+  public function storeByBioskop()
+  {
     $result = $this->model('TeaterModel')->insert($_POST);
     if ($result > 0) {
       $this->back($_POST['id_bioskop']);
+    }
+  }
+
+  public function store()
+  {
+    $result = $this->model('TeaterModel')->insert($_POST);
+    if ($result > 0) {
+      header("Location: /admin/jadwal");
     }
   }
 

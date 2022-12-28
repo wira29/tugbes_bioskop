@@ -14,9 +14,9 @@ class AdminFilmController extends Controller
     echo json_encode($data);
   }
 
-  public function search()
+  public function searchByName()
   {
-    $data = $this->model('FilmModel')->search($_POST['query']);
+    $data = $this->model('FilmModel')->search('judul', $_POST['query']);
 
     echo json_encode($data);
   }

@@ -13,6 +13,12 @@ class AdminBioskopController extends Controller
     echo json_encode($data);
   }
 
+  public function searchByName()
+  {
+    $data = $this->model('BioskopModel')->search('nama', $_POST['query']);
+
+    echo json_encode($data);
+  }
   public function create()
   {
     $this->view('admin/bioskop/create');
