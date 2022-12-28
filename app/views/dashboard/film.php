@@ -7,7 +7,7 @@ require_once __DIR__ . "/layouts/navbar.php";
   <div class="row">
     <div class="col-md-3 col-sm-12">
       <h4 class="sub-title">Filter</h4>
-      <form action="<?= $uriHelper->baseUrl('film/search') ?>" method="POST">
+      <form action="<?= $uriHelper->baseUrl('film/cari') ?>" method="POST">
         <div class="mt-5">
           <input type="text" name="film" class="form-control" placeholder="Film">
         </div>
