@@ -34,7 +34,7 @@ class ProfileController extends Controller
   {
     $_POST['id'] = $_SESSION['user']->id;
     $user = $this->model->getById($_SESSION['user']->id);
-    if (isset($_FILES['foto'])) {
+    if (isset($_FILES['foto']) && $_FILES['foto']['size'] > 0) {
       $ekstensi_diperbolehkan  = array('png', 'jpg', 'jpeg');
       $nama = $_FILES['foto']['name'];
       $x = explode('.', $nama);
@@ -60,9 +60,9 @@ class ProfileController extends Controller
     }
 
     $result = $this->model->update($_POST);
-    $_SESSION['user']->foto = $_POST['foto'];
-
     if ($result > 0) {
+      $updateduser = $this->model->getByEmail($user['email']);
+      $_SESSION['user'] = $updateduser;
       $this->back();
     }
   }
