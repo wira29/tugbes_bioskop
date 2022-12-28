@@ -43,7 +43,7 @@ class ProfileController extends Controller
       $file_tmp = $_FILES['foto']['tmp_name'];
 
       if (in_array($ekstensi, $ekstensi_diperbolehkan)) {
-        if ($ukuran < 1044070) {
+        if ($ukuran < 104407000) {
           $newName =   strtotime(date("Y-m-d H:i:s")) . '_' . $nama;
           $dest = 'assets/img/user/' . $newName;
           move_uploaded_file($file_tmp, $dest);

@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/layouts/navbar.php";
 ?>
+
 <body>
   <div class="container mt-5">
 
@@ -21,7 +22,7 @@ require_once __DIR__ . "/layouts/navbar.php";
           } ?>
 
     <button class="btn btn-primary" onclick="updateSeat()">pilih</button>
-    
+
     <div class="row mt-5">
       <h4>Harga Rp.<span id="harga"></span>
       </h4>
@@ -29,9 +30,9 @@ require_once __DIR__ . "/layouts/navbar.php";
       </h4>
     </div>
 
-    
+
     <div class="col-md-12 text-end mt-5">
-      <a href="<?= $uriHelper->baseUrl('confirm-checkout/' . $data['transaksi']->id) ?>" class="btn btn-primary">Checkout</a>
+      <a href="<?= $uriHelper->baseUrl('confirm-checkout/' . $data['transaksi']->id) ?>" onclick="sendSeat()" class="btn btn-primary">Checkout</a>
     </div>
   </div>
 
@@ -69,7 +70,6 @@ require_once __DIR__ . "/layouts/navbar.php";
         console.log(seat)
       })
       tempat.innerHTML = elText
-      sendSeat()
     }
 
     const sendSeat = () => {
@@ -77,11 +77,14 @@ require_once __DIR__ . "/layouts/navbar.php";
         url: `<?= $uriHelper->baseUrl() ?>checkout/jadwal/${<?= $data['jadwal']["id"] ?>}`,
         method: 'POST',
         data: {
-          selectedSeat, current_harga, idTransaksi: '<?= $data['transaksi']->id ?>'
+          selectedSeat,
+          current_harga,
+          idTransaksi: '<?= $data['transaksi']->id ?>'
         }
       })
+
     }
   </script>
   <?php
-require_once __DIR__ . "/layouts/footer.php";
-?>
+  require_once __DIR__ . "/layouts/footer.php";
+  ?>

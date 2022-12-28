@@ -7,7 +7,7 @@ require_once __DIR__ . "/layouts/navbar.php";
     <a href="<?= $uriHelper->baseUrl('film/' . $data['film']->id) ?>" class="text-white fs-5"><i class="fas fa-arrow-left me-3"></i> Kembali</a>
   </div>
 </div>
-<div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/jumbotron.png') ?>');">
+<div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/film/cover/' . $data['film']->cover) ?>');">
   <div class="container py-5">
     <div class="row justify-content-between">
       <div class="col-3">
