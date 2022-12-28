@@ -10,7 +10,7 @@
             <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>Teater</h2>
           </div>
-          <a type="button" href="/admin/bioskop" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Teater</a>
+          <a type="button" href="<?= Helper::baseUrl() ?>admin/bioskop" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Teater</a>
 
         </header>
         <article class="container-fluid ">
@@ -35,7 +35,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/teater/getall",
+          url: "<?= Helper::baseUrl() ?>teater/getall",
           type: "POST",
         },
         columnDefs: [{
@@ -66,7 +66,7 @@
       $('#teater-table tbody').on('click', '.btn-jadwal', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
-        window.location = `/admin/teater/${id}/jadwal`;
+        window.location = `<?= Helper::baseUrl() ?>admin/teater/${id}/jadwal`;
       });
 
     })

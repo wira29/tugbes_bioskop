@@ -6,12 +6,12 @@
       <?= $this->view('/admin/layouts/sidebar') ?>
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex align-items-center justify-content-between">
-          <a href="/admin/jadwal" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
+          <a href="<?= Helper::baseUrl() ?>admin/jadwal" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
           <div>
             <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>Jadwal</h2>
           </div>
-          <a type="button" href="/admin/teater/<?= $data['id_teater'] ?>/jadwal/create" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Jadwal</a>
+          <a type="button" href="<?= Helper::baseUrl() ?>admin/teater/<?= $data['id_teater'] ?>/jadwal/create" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Jadwal</a>
 
         </header>
         <article class="container-fluid ">
@@ -38,7 +38,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/teater/<?= $data['id_teater'] ?>/jadwal/getbyteater",
+          url: "<?= Helper::baseUrl() ?>teater/<?= $data['id_teater'] ?>/jadwal/getbyteater",
           type: "POST",
         },
         columnDefs: [{
@@ -80,14 +80,14 @@
       $('#jadwal-table tbody').on('click', '.btn-edit', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
-        window.location = `/admin/teater/<?= $data['id_teater'] ?>/jadwal/${id}/edit`;
+        window.location = `<?= Helper::baseUrl() ?>admin/teater/<?= $data['id_teater'] ?>/jadwal/${id}/edit`;
       });
       $('#jadwal-table tbody').on('click', '.btn-delete', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
 
         $.ajax({
-          url: `/jadwal/${id}/delete`,
+          url: `<?= Helper::baseUrl() ?>jadwal/${id}/delete`,
           method: 'POST',
         }).done(function() {
           location.reload();

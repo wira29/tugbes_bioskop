@@ -10,7 +10,7 @@
             <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>Film</h2>
           </div>
-          <a type="button" href="/admin/film/create" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Film</a>
+          <a type="button" href="<?= Helper::baseUrl('admin/film/create') ?>" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Film</a>
         </header>
         <article class="container-fluid ">
           <table id="film-table" class="table table-striped w-100">
@@ -34,7 +34,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/film/getall",
+          url: "<?= Helper::baseUrl() ?>film/getall",
           type: "POST",
         },
         columnDefs: [{
@@ -70,14 +70,14 @@
       $('#film-table tbody').on('click', '.btn-edit', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
-        window.location = `/admin/film/${id}/edit`;
+        window.location = `<?= Helper::baseUrl() ?>film/${id}/edit`;
       });
       $('#film-table tbody').on('click', '.btn-delete', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
 
         $.ajax({
-          url: `/film/${id}/delete`,
+          url: `<?= Helper::baseUrl() ?>film/${id}/delete`,
           method: 'POST'
         }).done(function() {
           location.reload();

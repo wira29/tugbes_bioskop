@@ -35,34 +35,34 @@ require_once __DIR__ . "/layouts/navbar.php";
         <?php } ?>
       </div>
 
-      <?php if(isset($data['page'])){ ?>
-      <div class="row mt-5">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
-            <?php if ($data['page'] != 1) { ?>
-              <li class="page-item">
-                <a class="page-link" href="<?= $uriHelper->baseUrl('film?page=' . $data['page'] - 1) ?>" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-            <?php } ?>
-            <?php
-            $i = 1;
-            for ($i; $i <= ceil($data['total'] / $data['limit']); $i++) {
-            ?>
-              <li class="page-item"><a class="page-link <?= ($i == $data['page']) ? 'active' : '' ?>" href="<?= $uriHelper->baseUrl('film?page=' . $i) ?>"><?= $i ?></a></li>
-            <?php } ?>
-            <?php if ($data['page'] != ceil($data['total'] / $data['limit'])) { ?>
-              <li class="page-item">
-                <a class="page-link" href="<?= $uriHelper->baseUrl('film?page=' . $data['page'] + 1) ?>" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            <?php } ?>
+      <?php if (isset($data['page'])) { ?>
+        <div class="row mt-5">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <?php if ($data['page'] != 1) { ?>
+                <li class="page-item">
+                  <a class="page-link" href="<?= $uriHelper->baseUrl('film?page=' . $data['page'] - 1) ?>" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+              <?php } ?>
+              <?php
+              $i = 1;
+              for ($i; $i <= ceil($data['total'] / $data['limit']); $i++) {
+              ?>
+                <li class="page-item"><a class="page-link <?= ($i == $data['page']) ? 'active' : '' ?>" href="<?= $uriHelper->baseUrl('film?page=' . $i) ?>"><?= $i ?></a></li>
+              <?php } ?>
+              <?php if ($data['page'] != ceil($data['total'] / $data['limit'])) { ?>
+                <li class="page-item">
+                  <a class="page-link" href="<?= $uriHelper->baseUrl('film?page=' . $data['page'] + 1) ?>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              <?php } ?>
 
-          </ul>
-        </nav>
-      </div>
+            </ul>
+          </nav>
+        </div>
       <?php } ?>
 
     </div>

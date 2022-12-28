@@ -36,7 +36,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/transaksi/getall",
+          url: "<?= Helper::baseUrl() ?>transaksi/getall",
           type: "POST",
         },
         columnDefs: [{
@@ -72,7 +72,7 @@
       $('#user-table tbody').on('click', '.btn-detail', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
-        window.location = `/admin/transaksi/${id}/detail`;
+        window.location = `<?= Helper::baseUrl() ?>admin/transaksi/${id}/detail`;
       });
     })
   </script>

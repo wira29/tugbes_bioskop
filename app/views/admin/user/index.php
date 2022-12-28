@@ -11,7 +11,7 @@
             <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>User</h2>
           </div>
-          <a type="button" href="/admin/user/create" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah User</a>
+          <a type="button" href="<?= Helper::baseUrl() ?>admin/user/create" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah User</a>
 
         </header>
         <article class="container-fluid ">
@@ -36,7 +36,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/user/getall",
+          url: "<?= Helper::baseUrl() ?>user/getall",
           type: "POST",
         },
         columnDefs: [{
@@ -72,14 +72,14 @@
       $('#user-table tbody').on('click', '.btn-edit', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
-        window.location = `/admin/user/${id}/edit`;
+        window.location = `<?= Helper::baseUrl() ?>admin/user/${id}/edit`;
       });
       $('#user-table tbody').on('click', '.btn-delete', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
 
         $.ajax({
-          url: `/user/${id}/delete`,
+          url: `<?= Helper::baseUrl() ?>user/${id}/delete`,
           method: 'POST'
         }).done(function() {
           location.reload();

@@ -10,7 +10,7 @@
             <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
             <h2>Bioskop</h2>
           </div>
-          <a type="button" href="/admin/bioskop/create" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Bioskop</a>
+          <a type="button" href="<?= Helper::baseUrl() ?>admin/bioskop/create" class="m-3 btn btn-primary"><span><i class="fa fa-plus me-2"></i>Tambah Bioskop</a>
 
         </header>
         <article class="container-fluid ">
@@ -34,7 +34,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "/bioskop/getall",
+          url: "<?= Helper::baseUrl() ?>bioskop/getall",
           type: "POST",
         },
         columnDefs: [{
@@ -67,14 +67,14 @@
       $('#bioskop-table tbody').on('click', '.btn-edit', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
-        window.location = `/admin/bioskop/${id}/edit`;
+        window.location = `<?= Helper::baseUrl() ?>admin/bioskop/${id}/edit`;
       });
       $('#bioskop-table tbody').on('click', '.btn-delete', function() {
         const row = $(this).closest('tr');
         const id = table.row(row).data().id;
 
         $.ajax({
-          url: `/admin/bioskop/${id}/delete`,
+          url: `<?= Helper::baseUrl() ?>admin/bioskop/${id}/delete`,
           method: 'POST'
         }).done(function() {
           location.reload();

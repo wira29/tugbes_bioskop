@@ -8,7 +8,7 @@
       <main class="p-4 flex-grow-1">
         <header class="container-fluid d-flex flex-column justify-items-center gap-3">
           <div>
-            <a href="/admin/teater/<?= $data['id_teater'] ?>/jadwal" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
+            <a href="<?= Helper::baseUrl() ?>admin/teater/<?= $data['id_teater'] ?>/jadwal" class="me-3 btn btn-warning"><span><i class="fa fa-arrow-left me-2"></i></span>Kembali</a>
           </div>
           <div class="d-flex align-items-center gap-3">
             <a class="text-theme-primary " data-bs-toggle="collapse" href="#sidebar" role="button"><i class="fa-solid fa-bars fa-xl mb-3"></i></a>
@@ -16,7 +16,7 @@
           </div>
         </header>
         <article class="container-fluid ">
-          <form class="needs-validation" novalidate action="/jadwal" method="POST" enctype="multipart/form-data">
+          <form class="needs-validation" novalidate action="<?= Helper::baseUrl() ?>jadwal" method="POST" enctype="multipart/form-data">
             <input type="text" class="form-control" name="id_teater" value="<?= $data['id_teater'] ?>" id="id_teater" required hidden>
             <div class="mb-3 w-25">
               <input type="text" class="form-control" name='id_film' id="id_film" required hidden />
@@ -72,7 +72,7 @@
     $(function() {
       $("#film").autocomplete({
         source: function(request, response) {
-          $.post("/film/search", {
+          $.post("<?= Helper::baseUrl() ?>film/search", {
             query: request.term
           }, function(data) {
             data = JSON.parse(data)
