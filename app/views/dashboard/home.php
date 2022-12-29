@@ -16,7 +16,7 @@
     <div class="carousel-item">
       <div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/film/cover/peaky-blinders.png') ?>');">
       <div class="container py-5">
-        <h1 class="fw-bold">Peaky Blinders </h1>
+        <h1 class="fw-bold">Peaky Blinders</h1>
         <p class="col-md-6 fs-5">Peaky Blinders adalah serial televisi drama kriminal Britania Raya yang dibuat oleh Steven Knight. Berlatar di Birmingham, Inggris, serial ini mengikuti eksploitasi keluarga mafia Shelby setelah berlangsungnya Perang Dunia I.</p>
       </div>
     </div>
