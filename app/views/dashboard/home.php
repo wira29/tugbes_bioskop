@@ -17,7 +17,7 @@
       <div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/jumbotron.png') ?>');">
       <div class="container py-5">
         <h1 class="fw-bold">TBA-ID MAKIN ASIK</h1>
-        <p class="col-md-6 fs-5">Tersedia berbagai film yang akan membuat <br> hidupmu makin asik! <br> Ditemani dengan berbagai cemilan yang akan <br> melengkapi keasikanmu saat menonton!</p>
+        <p class="col-md-6 fs-5">Tersedia berbagai film yang akan membuat <br> Hidupmu makin asik! <br> Ditemani dengan berbagai cemilan yang akan <br> melengkapi keasikanmu saat menonton!</p>
       </div>
     </div>
     </div>
