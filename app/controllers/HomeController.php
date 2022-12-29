@@ -23,4 +23,9 @@ class HomeController extends Controller
   {
     return $this->view('admin/dashboard');
   }
+
+  public function contact()
+  {
+    return $this->view('dashboard/contact');
+  }
 }

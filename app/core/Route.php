@@ -11,6 +11,7 @@ class Route
     'GET@/register' => 'AuthController@index',
     'POST@/processRegister' => 'AuthController@processRegister',
     'GET@/logout' => 'AuthController@logout',
+    'GET@/contact' => 'HomeController@contact',
     // end auth 
 
     // user

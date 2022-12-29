@@ -8,24 +8,24 @@
     <div class="carousel-item active">
       <div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/jumbotron.png') ?>');">
       <div class="container py-5">
-        <h1 class="fw-bold">Black Adam</h1>
-        <p class="col-md-6 fs-5">Berkisah tentang sosok antihero yang mendapatkan kekuatan dari dewa mesir bernama Adam. Ia datang untuk menciptakan keadilan di dunia saat ini.</p>
+        <h1 class="fw-bold">RAIH TIKET!</h1>
+        <p class="col-md-6 fs-5">Mudah dan praktis tanpa perlu membuang waktu untuk Mengantri ataupun kehabisan tiket film yang kamu inginkan, Segera beli tiket hanya di TBA-ID.</p>
       </div>
     </div>
     </div>
     <div class="carousel-item">
-      <div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/film/cover/peaky-blinders.png') ?>');">
+      <div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/jumbotron.png') ?>');">
       <div class="container py-5">
-        <h1 class="fw-bold">Peaky Blinders</h1>
-        <p class="col-md-6 fs-5">Peaky Blinders adalah serial televisi drama kriminal Britania Raya yang dibuat oleh Steven Knight. Berlatar di Birmingham, Inggris, serial ini mengikuti eksploitasi keluarga mafia Shelby setelah berlangsungnya Perang Dunia I.</p>
+        <h1 class="fw-bold">TBA-ID MAKIN ASIK</h1>
+        <p class="col-md-6 fs-5">Tersedia berbagai film yang akan membuat <br> hidupmu makin asik! <br> Ditemani dengan berbagai cemilan yang akan <br> melengkapi keasikanmu saat menonton!</p>
       </div>
     </div>
     </div>
     <div class="carousel-item">
-      <div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/film/cover/mortal-kombat.png') ?>');">
+      <div class="p-5 mb-4 rounded-3 jumbotron" style="background-image: url('<?= $uriHelper->baseUrl('assets/img/jumbotron.png') ?>');">
       <div class="container py-5">
-        <h1 class="fw-bold">Mortal Kombat</h1>
-        <p class="col-md-6 fs-5">Mortal Kombat adalah serial film aksi seni bela diri Amerika yang didasarkan pada serial video game pertarungan dengan nama yang sama oleh Midway Games. Film pertama diproduksi oleh Threshold Entertainment milik Lawrence Kasanoff.</p>
+        <h1 class="fw-bold">TBACROF!</h1>
+        <p class="col-md-6 fs-5">CROFFELIN AJA HANYA <br> Rp180 RIBU!(6 pcs) <br> TERSEDIA DI SEMUA BIOSKOP TBA-ID <br> DAPATKAN SEGERA SEBELUM KEHABISAN!!!</p>
       </div>
     </div>
     </div>
@@ -62,7 +62,8 @@
     <div class="p-5 mb-4 rounded-3 jumbotron mt-5" style="background-image: url('./assets/img/hero-2.png');">
       <div class="container py-5">
         <h3 class="fw-bold">Diskon Akhir Tahun</h3>
-        <p class="col-md-6">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+        <p class="col-md-6">Hemat nonton film dan dapatkan voucher TBA-ID <br> <b>Rp50 ribu</b
+        > dan hadiah lainnya dengan minimal belanja Rp300 ribu</p>
       </div>
     </div>
 
